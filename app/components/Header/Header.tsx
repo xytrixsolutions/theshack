@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import { useState } from "react";
 import Link from "next/link";
 
@@ -23,13 +23,13 @@ const Navbar = () => {
                 : "hidden md:flex space-x-7"
             } text-white text-[16px] md:static md:flex-row md:space-y-0 md:py-0 md:px-0`}
           >
-            <a href="#" className="hover:text-[#DC143C]">
+            <a href="/home" className="hover:text-[#DC143C]">
               Home
             </a>
-            <Link href="#" className="hover:text-[#DC143C]">
+            <Link href="/menu" className="hover:text-[#DC143C]">
               Menu
             </Link>
-            <Link href="#" className="hover:text-[#DC143C]">
+            <Link href="/contact" className="hover:text-[#DC143C]">
               Contact
             </Link>
           </nav>
