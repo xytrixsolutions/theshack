@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 
-const Hero2 = () => {
+const HomeHero2 = () => {
   return (
     <section className="flex flex-col md:flex-row items-center bg-black text-white md:px-36 md:py-16 px-6 py-10 md:gap-10 mt-8">
       {/* Left Section */}
@@ -68,4 +68,4 @@ const Hero2 = () => {
   );
 };
 
-export default Hero2;
+export default HomeHero2;

@@ -6,59 +6,61 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <div className="w-full flex justify-center border-b-[1px] border-[#DC143C]">
-      <div className="bg-black w-full h-[80px] flex items-center">
-        <div className="flex items-center justify-between max-w-[1320px] w-full mx-auto">
-          {/* Logo Section */}
-          <div className="flex items-center text-[24px] font-bold">
-            <span className="text-white">The</span>
-            <span className="text-[#DC143C]">Shack</span>
-          </div>
+    <header className="w-full border-b border-[#DC143C] bg-black">
+      <div className="max-w-[1320px] mx-auto flex items-center justify-between h-[80px] px-4">
+        {/* Logo */}
+        <div className="text-2xl font-extrabold text-white flex items-center gap-1">
+          <span>The</span>
+          <span className="text-[#DC143C]">Shack</span>
+        </div>
 
-          {/* Navigation Links */}
-          <nav
-            className={`${
-              isMenuOpen
-                ? "flex flex-col bg-black absolute top-[80px] left-0 w-full space-y-4 py-4 px-6 z-50"
-                : "hidden md:flex space-x-7"
-            } text-white text-[16px] md:static md:flex-row md:space-y-0 md:py-0 md:px-0`}
+        {/* Desktop Nav */}
+        <nav className="hidden md:flex gap-8 text-white text-base font-medium">
+          <Link href="/home" className="hover:text-[#DC143C] transition">
+            Home
+          </Link>
+          <Link href="/menu" className="hover:text-[#DC143C] transition">
+            Menu
+          </Link>
+          <Link href="/contact" className="hover:text-[#DC143C] transition">
+            Contact
+          </Link>
+        </nav>
+
+        {/* Mobile Button */}
+        <div className="md:hidden">
+          <button
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            className="text-[#DC143C] focus:outline-none"
           >
-            <a href="/home" className="hover:text-[#DC143C]">
-              Home
-            </a>
-            <Link href="/menu" className="hover:text-[#DC143C]">
-              Menu
-            </Link>
-            <Link href="/contact" className="hover:text-[#DC143C]">
-              Contact
-            </Link>
-          </nav>
-
-          {/* Mobile Menu Button */}
-          <div className="md:hidden flex items-center">
-            <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-[#DC143C]"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-8 w-8"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M4 6h16M4 12h16m-7 6h7"
-                />
+            {isMenuOpen ? (
+              <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
               </svg>
-            </button>
-          </div>
+            ) : (
+              <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16m-7 6h7" />
+              </svg>
+            )}
+          </button>
         </div>
       </div>
-    </div>
+
+      {/* Mobile Nav */}
+      {isMenuOpen && (
+        <nav className="md:hidden bg-black w-full absolute top-[80px] left-0 px-6 py-4 flex flex-col gap-4 text-white text-base z-50 shadow-lg transition-all duration-300 ease-in-out">
+          <Link href="/home" className="hover:text-[#DC143C]" onClick={() => setIsMenuOpen(false)}>
+            Home
+          </Link>
+          <Link href="/menu" className="hover:text-[#DC143C]" onClick={() => setIsMenuOpen(false)}>
+            Menu
+          </Link>
+          <Link href="/contact" className="hover:text-[#DC143C]" onClick={() => setIsMenuOpen(false)}>
+            Contact
+          </Link>
+        </nav>
+      )}
+    </header>
   );
 };
 

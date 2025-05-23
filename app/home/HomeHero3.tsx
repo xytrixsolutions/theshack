@@ -1,7 +1,7 @@
 import React from 'react'
 import { PiHamburgerLight, PiCookieLight, PiWineLight } from "react-icons/pi";
 
-const Hero4 = () => {
+const HomeHero3 = () => {
   return (
     <section className="flex flex-col md:flex-row bg-black text-white px-10 py-16 md:px-36">
   {/* Left Section - Image Grid */}
@@ -94,4 +94,4 @@ const Hero4 = () => {
   )
 }
 
-export default Hero4
+export default HomeHero3

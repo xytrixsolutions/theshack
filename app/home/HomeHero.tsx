@@ -3,12 +3,12 @@ import React from 'react';
 import Link from 'next/link';
 import { FaFacebookF, FaTwitter, FaPinterest } from "react-icons/fa";
 
-const Hero1 = () => {
+const HomeHero = () => {
   return (
     <div className='mt-20'>
       
       <section 
-      className="relative text-white bg-[url('/unsplash_qom5MPOER-I.png')] bg-cover bg-center bg-no-repeat">
+      className="relative text-white bg-[url('/images/home/unsplash_bpPTlXWTOvg.png')] bg-cover bg-center bg-no-repeat">
       {/* Overlay for background opacity */}
       <div className="absolute inset-0 bg-black bg-opacity- z-0"></div>
 
@@ -41,7 +41,7 @@ const Hero1 = () => {
             </p>
             <div className="text-center md:text-left">
               <Link href="../menu">
-              <button className="bg-[#DC143C] text-white px-6 py-3 rounded-full hover:bg-orange-600">
+              <button className="bg-[#DC143C] text-white px-6 py-3 rounded-full hover:bg-black border-[#DC143C] border-[1px]">
                 See Menu
               </button>
               </Link>
@@ -63,4 +63,4 @@ const Hero1 = () => {
   );
 };
 
-export default Hero1;
+export default HomeHero;
