@@ -1,6 +1,22 @@
 "use client";
 import { useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+
+const NavLink = ({ href, children }) => {
+  const pathname = usePathname();
+  const isActive = pathname === href;
+
+  return (
+    <Link
+      href={href}
+      className={`relative group ${isActive ? "text-[#DC143C]" : ""}`}
+    >
+      {children}
+      <span className="block absolute bottom-0 left-0 h-0.5 bg-[#DC143C] w-0 group-hover:w-full transition-all duration-300"></span>
+    </Link>
+  );
+};
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -11,8 +27,10 @@ const Navbar = () => {
         <div className="flex items-center justify-between max-w-[1320px] w-full mx-auto">
           {/* Logo Section */}
           <div className="flex items-center text-[24px] font-bold">
-            <span className="text-white">The</span>
-            <span className="text-[#DC143C]">Shack</span>
+            <Link href="/">
+              <span className="text-white">The</span>
+              <span className="text-[#DC143C]">Shack</span>
+            </Link>
           </div>
 
           {/* Navigation Links */}
@@ -21,17 +39,11 @@ const Navbar = () => {
               isMenuOpen
                 ? "flex flex-col bg-black absolute top-[80px] left-0 w-full space-y-4 py-4 px-6 z-50"
                 : "hidden md:flex space-x-7"
-            } text-white text-[16px] md:static md:flex-row md:space-y-0 md:py-0 md:px-0`}
+            } text-white text-[16px] md:static md:flex-row md`}
           >
-            <a href="/home" className="hover:text-[#DC143C]">
-              Home
-            </a>
-            <Link href="/menu" className="hover:text-[#DC143C]">
-              Menu
-            </Link>
-            <Link href="/contact" className="hover:text-[#DC143C]">
-              Contact
-            </Link>
+            <NavLink href="/home">Home</NavLink>
+            <NavLink href="/menu">Menu</NavLink>
+            <NavLink href="/contact">Contact</NavLink>
           </nav>
 
           {/* Mobile Menu Button */}
