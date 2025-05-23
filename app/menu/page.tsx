@@ -1,24 +1,15 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
-import { Product } from "@/types/Product";
+import { Category, Product } from "@/types/Product";
 import Image from "next/image";
 import { allProducts } from "@/data/products";
 
-const categories = [
-  "Kitchenware",
-  "Home Decor",
-  "Stationery",
-  "Garden",
-  "Apparel",
-  "Art",
-];
-
-const ShopPage = () => {
+const Menu = () => {
   const [products, setProducts] = useState<Product[]>([]);
   const [filteredProducts, setFilteredProducts] = useState<Product[]>([]);
-  const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
+  const [selectedCategories, setSelectedCategories] = useState<Category[]>([]);
   const [searchTerm, setSearchTerm] = useState<string>("");
 
   useEffect(() => {
@@ -43,7 +34,7 @@ const ShopPage = () => {
     setFilteredProducts(filtered);
   }, [products, selectedCategories, searchTerm]);
 
-  const toggleCategory = (category: string) => {
+  const toggleCategory = (category: Category) => {
     setSelectedCategories((prev) =>
       prev.includes(category)
         ? prev.filter((c) => c !== category)
@@ -57,7 +48,7 @@ const ShopPage = () => {
       <aside className="w-full md:w-1/4 p-4  rounded-lg mb-6 md:mb-0">
         <h3 className="text-xl font-bold mb-4">Category</h3>
         <ul className="space-y-2">
-          {categories.map((cat) => (
+          {Object.values(Category).map((cat) => (
             <li key={cat}>
               <label className="flex items-center">
                 <input
@@ -85,7 +76,7 @@ const ShopPage = () => {
       <main className="w-full">
         <div className="grid grid-cols-1 sm:grid-cols-2  lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {filteredProducts.map((product) => (
-            <Link href={`/product/${product.id}`} key={product.id}>
+            <Link href={`/menu/${product.id}`} key={product.id}>
               <div className="border rounded-lg shadow-md hover:shadow-xl transition-shadow duration-200 p-4">
                 <Image
                   src={product.image}
@@ -116,4 +107,4 @@ const ShopPage = () => {
   );
 };
 
-export default ShopPage;
+export default Menu;
