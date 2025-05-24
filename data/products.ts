@@ -63,7 +63,7 @@ export const allProducts: Product[] = [
       "Iceberg Lettuce, Tomatoes, Red Onions, Black Olives, Croutons and Mozzarella | Choice of Ranch, Jalapeño Ranch, Blue Cheese, Balsamic Vinaigrette, or Caesar",
     image: "https://picsum.photos/200/300",
 
-    category: Category.SALADS,
+    category: Category.FRESH_GREENS,
   },
   {
     id: "8",
@@ -73,7 +73,7 @@ export const allProducts: Product[] = [
       "Romaine Lettuce, Parmesan Cheese, Croutons with Caesar Dressing",
     image: "https://picsum.photos/200/300",
 
-    category: Category.SALADS,
+    category: Category.FRESH_GREENS,
   },
   {
     id: "9",
@@ -83,7 +83,7 @@ export const allProducts: Product[] = [
       "Iceberg Lettuce, Crumbled Blue Cheese, Bacon, Grape Tomatoes, Red Onion with Blue Cheese Dressing",
     image: "https://picsum.photos/200/300",
 
-    category: Category.SALADS,
+    category: Category.FRESH_GREENS,
   },
   {
     id: "10",
@@ -93,7 +93,7 @@ export const allProducts: Product[] = [
       "Mixed Greens, Grilled Chicken Tenders, Candied Pecans, Grape Tomatoes, Blue Cheese Crumbles with Balsamic Vinaigrette",
     image: "https://picsum.photos/200/300",
 
-    category: Category.SALADS,
+    category: Category.FRESH_GREENS,
   },
   {
     id: "11",
@@ -103,7 +103,7 @@ export const allProducts: Product[] = [
       "Arugula, Feta, Red Onion, Candied Pecan and Dried Cranberries with Balsamic Vinaigrette Dressing",
     image: "https://picsum.photos/200/300",
 
-    category: Category.SALADS,
+    category: Category.FRESH_GREENS,
   },
 
   // ===== MAC & SPECIALTIES =====
@@ -115,7 +115,7 @@ export const allProducts: Product[] = [
     price: 11.99,
     description:
       "3 Cheese Mac topped with Panko Bread Crumbs | Add Bacon Bits +$2",
-    category: Category.MAC_SPECIALTIES,
+    category: Category.MAC,
   },
   {
     id: "13",
@@ -125,7 +125,7 @@ export const allProducts: Product[] = [
     price: 15.99,
     description:
       "3 Cheese Mac, Buffalo Tenders, Blue Cheese Crumbles drizzled with Franks Red Hot Sauce",
-    category: Category.MAC_SPECIALTIES,
+    category: Category.MAC,
   },
   {
     id: "14",
@@ -135,7 +135,7 @@ export const allProducts: Product[] = [
     price: 14.99,
     description:
       "3 Cheese Mac, Pulled Pork, Pickled Jalapenos, Bacon drizzled with BBQ Sauce",
-    category: Category.MAC_SPECIALTIES,
+    category: Category.MAC,
   },
   {
     id: "15",
@@ -144,10 +144,10 @@ export const allProducts: Product[] = [
 
     price: 16.99,
     description: "3 Cheese Mac, Smoked Brisket topped with Fried Onion Strings",
-    category: Category.MAC_SPECIALTIES,
+    category: Category.MAC,
   },
 
-  // ===== SANDWICHES =====
+  // ===== HAND_HELDS =====
   {
     id: "16",
     image: "https://picsum.photos/200/300",
@@ -156,7 +156,7 @@ export const allProducts: Product[] = [
     price: 13.99,
     description:
       "Grilled or Fried Chicken Tenders with Lettuce, Tomato, Onion and Shack Sauce | Served with Fries",
-    category: Category.SANDWICHES,
+    category: Category.HAND_HELDS,
   },
   {
     id: "17",
@@ -166,7 +166,7 @@ export const allProducts: Product[] = [
     price: 13.99,
     description:
       "Pulled Pork Sandwich with Tangy Slaw and BBQ sauce | Served with Fries",
-    category: Category.SANDWICHES,
+    category: Category.HAND_HELDS,
   },
   {
     id: "18",
@@ -176,7 +176,7 @@ export const allProducts: Product[] = [
     price: 15.99,
     description:
       "Smoked Brisket with Fried Onion Strings and BBQ sauce | Served with Fries",
-    category: Category.SANDWICHES,
+    category: Category.HAND_HELDS,
   },
   {
     id: "19",
@@ -186,7 +186,7 @@ export const allProducts: Product[] = [
     price: 14.99,
     description:
       "Short Rib and Brisket Blend Burger with American Cheese, Lettuce, Tomato, Onion and Shack Sauce | Served with Fries (+$4 Triple Stack)",
-    category: Category.SANDWICHES,
+    category: Category.HAND_HELDS,
   },
   {
     id: "20",
@@ -196,7 +196,7 @@ export const allProducts: Product[] = [
       "Beer Battered Cod with Shredded Lettuce, Tomato and Secret Sauce | Served with Fries",
     image: "https://picsum.photos/200/300",
 
-    category: Category.SANDWICHES,
+    category: Category.HAND_HELDS,
   },
 
   // ===== SEAFOOD =====
@@ -207,7 +207,7 @@ export const allProducts: Product[] = [
     image: "https://picsum.photos/200/300",
 
     description: "Beer Battered Cod with Coleslaw and Chunky Chips",
-    category: Category.SEAFOOD,
+    category: Category.THE_POND,
   },
 
   // ===== SPECIALTY PIES =====
@@ -219,7 +219,7 @@ export const allProducts: Product[] = [
     price: 16.99,
     description:
       "Marinara, Mozzarella, Feta, Mushrooms, Green Peppers, Red Onions, Black Olives and Tomatoes",
-    category: Category.PIZZAS,
+    category: Category.SPECIALTY_PIES,
   },
   {
     id: "23",
@@ -229,7 +229,7 @@ export const allProducts: Product[] = [
     price: 21.99,
     description:
       "Marinara, Mozzarella, Pepperoni, Mushroom, Green Peppers, Onion, Italian Sausage, Black Olives and Ham",
-    category: Category.PIZZAS,
+    category: Category.SPECIALTY_PIES,
   },
   {
     id: "24",
@@ -239,7 +239,7 @@ export const allProducts: Product[] = [
     price: 17.99,
     description:
       "BBQ Sauce, Mozzarella, Garlic Chicken, Red Onion and Cilantro",
-    category: Category.PIZZAS,
+    category: Category.SPECIALTY_PIES,
   },
   {
     id: "25",
@@ -249,7 +249,7 @@ export const allProducts: Product[] = [
     price: 21.99,
     description:
       "Olive Oil Base, Mozzarella, Smoked Brisket, Smoked Gouda with Fresh Arugula",
-    category: Category.PIZZAS,
+    category: Category.SPECIALTY_PIES,
   },
   {
     id: "26",
@@ -259,7 +259,7 @@ export const allProducts: Product[] = [
     price: 19.99,
     description:
       "Marinara, Bacon, Breakfast Sausage, Mozzarella, Fried Egg, Diced Potatoes, Peppers and Onions",
-    category: Category.PIZZAS,
+    category: Category.SPECIALTY_PIES,
   },
   {
     id: "27",
@@ -268,7 +268,7 @@ export const allProducts: Product[] = [
 
     price: 17.99,
     description: "Marinara, Mozzarella, Bacon, Pineapple and Ham",
-    category: Category.PIZZAS,
+    category: Category.SPECIALTY_PIES,
   },
   {
     id: "28",
@@ -278,7 +278,7 @@ export const allProducts: Product[] = [
 
     description:
       "Ranch Base, Mozzarella, Grilled Chicken, Blue Cheese Crumbles with Franks Red Hot",
-    category: Category.PIZZAS,
+    category: Category.SPECIALTY_PIES,
   },
   {
     id: "29",
@@ -288,7 +288,7 @@ export const allProducts: Product[] = [
 
     description:
       "Jalapeno Ranch Base, Mozzarella, Pulled Pork, Jalapenos with BBQ Sauce",
-    category: Category.PIZZAS,
+    category: Category.SPECIALTY_PIES,
   },
   {
     id: "30",
@@ -298,7 +298,7 @@ export const allProducts: Product[] = [
       "Fig Jam Base, Dr. Pepper Caramelized Onions, Mushroom and Mozzarella",
     image: "https://picsum.photos/200/300",
 
-    category: Category.PIZZAS,
+    category: Category.SPECIALTY_PIES,
   },
 
   // ===== WINGS & TENDERS =====
@@ -310,7 +310,7 @@ export const allProducts: Product[] = [
 
     description:
       "Plain, BBQ, Buffalo, Teriyaki, or Sizzling Honey Garlic | Served with Ranch/Blue Cheese",
-    category: Category.WINGS_TENDERS,
+    category: Category.COOP,
   },
   {
     id: "32",
@@ -320,7 +320,7 @@ export const allProducts: Product[] = [
 
     description:
       "Plain, BBQ, Buffalo, Teriyaki, or Sizzling Honey Garlic | Served with Ranch/Blue Cheese",
-    category: Category.WINGS_TENDERS,
+    category: Category.COOP,
   },
   {
     id: "33",
@@ -330,7 +330,7 @@ export const allProducts: Product[] = [
 
     description:
       "Plain, BBQ, Buffalo, Teriyaki, or Sizzling Honey Garlic | Served with Ranch/Blue Cheese",
-    category: Category.WINGS_TENDERS,
+    category: Category.COOP,
   },
   {
     id: "34",
@@ -339,7 +339,7 @@ export const allProducts: Product[] = [
     image: "https://picsum.photos/200/300",
 
     description: "Grilled or Fried with Fries | Boom Boom Sauce (+$1 Buffalo)",
-    category: Category.WINGS_TENDERS,
+    category: Category.COOP,
   },
   {
     id: "35",
@@ -348,7 +348,7 @@ export const allProducts: Product[] = [
     description: "Grilled or Fried with Fries | Boom Boom Sauce (+$1 Buffalo)",
     image: "https://picsum.photos/200/300",
 
-    category: Category.WINGS_TENDERS,
+    category: Category.COOP,
   },
 
   // ===== KIDS MENU =====
@@ -358,13 +358,13 @@ export const allProducts: Product[] = [
     price: 8.99,
     image: "https://picsum.photos/200/300",
 
-    category: Category.KIDS_MENU,
+    category: Category.THE_LITTLE_ONES,
   },
   {
     id: "37",
     name: "CHICKEN TENDERS & FRIES",
     price: 7.99,
-    category: Category.KIDS_MENU,
+    category: Category.THE_LITTLE_ONES,
     image: "https://picsum.photos/200/300",
   },
   {
@@ -373,7 +373,7 @@ export const allProducts: Product[] = [
     price: 7.99,
     image: "https://picsum.photos/200/300",
 
-    category: Category.KIDS_MENU,
+    category: Category.THE_LITTLE_ONES,
   },
   {
     id: "39",
@@ -381,7 +381,7 @@ export const allProducts: Product[] = [
 
     name: "GRILLED CHEESE & FRIES",
     price: 7.99,
-    category: Category.KIDS_MENU,
+    category: Category.THE_LITTLE_ONES,
   },
 
   // ===== SIDES =====
@@ -416,13 +416,13 @@ export const allProducts: Product[] = [
     description: "Baked Chocolate Chip Cookie Dough with Vanilla Ice Cream",
     image: "https://picsum.photos/200/300",
 
-    category: Category.DESSERTS,
+    category: Category.SWEET_TOOTH,
   },
   {
     id: "44",
     name: "SALTED CARAMEL CHEESECAKE",
     price: 8.99,
-    category: Category.DESSERTS,
+    category: Category.SWEET_TOOTH,
     image: "https://picsum.photos/200/300",
   },
   {
@@ -430,7 +430,7 @@ export const allProducts: Product[] = [
     name: "I DARE YOU",
     price: 8.99,
     description: "Cheese Curds with Honey, Cinnamon and Sugar",
-    category: Category.DESSERTS,
+    category: Category.SWEET_TOOTH,
     image: "https://picsum.photos/200/300",
   },
 
