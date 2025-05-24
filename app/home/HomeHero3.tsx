@@ -50,9 +50,12 @@ const Hero4 = () => {
           And Experienced
         </h2>
         <p className="mt-4 text-gray-300 text-sm leading-relaxed">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque diam
-          pellentesque bibendum non dui volutpat fringilla bibendum. Urna, elit
-          augue urna, vitae feugiat pretium donec id elementum.
+          What sets TheShack apart is our unwavering commitment to culinary
+          excellence and customer satisfaction. Our experienced team has
+          perfected the balance between speed and quality, ensuring every meal
+          exceeds your expectations. From our signature recipes to our
+          innovative cooking techniques, we deliver extraordinary flavors that
+          keep our customers coming back.
         </p>
 
         {/* Features Section */}

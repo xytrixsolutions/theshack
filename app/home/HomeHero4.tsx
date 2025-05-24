@@ -7,15 +7,15 @@ const testimonials = [
   {
     id: 1,
     name: "Alamin Hasan",
-    text: "“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque bibendum non dui volutpat fringilla. Ut vitae feugiat pretium donec id elementum.”",
-    image: "/images/home/Ellipse 6.png",
+    text: "“Absolutely wonderful experience! Their team exceeded expectations with top-notch service and design.”",
+    image: "/images/home/Ellipse 4.png",
     rating: 5,
   },
   {
     id: 2,
-    name: "Sarah Johnson",
+    name: "Johnson Abraham",
     text: "“Absolutely wonderful experience! Their team exceeded expectations with top-notch service and design.”",
-    image: "/images/home/Ellipse 6.png",
+    image: "/images/home/Ellipse 5.png",
     rating: 5,
   },
   {

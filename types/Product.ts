@@ -4,7 +4,6 @@ export interface Product {
   image: string;
   price: number;
   description?: string;
-  tags: string[];
   category: Category; // Changed from string to enum type
 }
 export enum Category {
