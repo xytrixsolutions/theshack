@@ -73,7 +73,11 @@ const Menu = () => {
       <main className="w-full">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 auto-rows-fr">
           {filteredProducts.map((product) => (
-            <Link href={`#`} key={product.id} className="h-full">
+            <Link
+              href={`/menu/${product.id}`}
+              key={product.id}
+              className="h-full"
+            >
               <div className="border rounded-lg shadow-md hover:shadow-xl transition-shadow duration-200 p-4 h-full flex flex-col">
                 {/* Image Container - Fixed Height */}
                 <div className="w-full h-56 mb-4 flex-shrink-0">
