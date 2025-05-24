@@ -33,12 +33,14 @@ const Hero1 = () => {
                 <span>Food Quality</span>
               </h1>
               <p className="text-white text-sm md:text-[14px] mb-6 text-center md:text-left">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Varius
-                sed pharetra dictum neque massa congue.
+                Experience the perfect fusion of lightning-fast service and
+                exceptional taste. Our chefs craft every dish with premium
+                ingredients, delivering restaurant-quality meals in minutes, not
+                hours.
               </p>
               <div className="text-center md:text-left">
                 <Link href="../menu">
-                  <button className="bg-[#DC143C] text-white px-6 py-3 rounded-full hover:bg-orange-600">
+                  <button className="bg-[#DC143C] text-white px-6 py-3 rounded-full hover:bg-black border-[#DC143C] border-[1px]">
                     See Menu
                   </button>
                 </Link>

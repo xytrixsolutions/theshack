@@ -122,7 +122,7 @@ const Footer = () => {
       {/* Footer Bottom */}
       <div className="mt-10  bg-[#4F4F4F] opacity-50 pt-6 h-[99px] md:flex items-center">
         <div className="container mx-auto px-6 lg:px-20 flex flex-col md:flex-row items-center justify-between">
-          <p className="text-gray-400 text-sm">
+          <p className="text-gray-50 text-sm">
             Copyright © 2022 by The Shack. All Rights Reserved.
           </p>
           <div className="flex w-[240px] h-[34px] gap-3">

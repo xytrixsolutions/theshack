@@ -4,19 +4,19 @@ export interface Product {
   image: string;
   price: number;
   description?: string;
-  tags: string[];
   category: Category; // Changed from string to enum type
 }
 export enum Category {
   NIBBLES = "Nibbles",
-  SALADS = "Salads",
-  MAC_SPECIALTIES = "Mac & Specialties",
-  SANDWICHES = "Sandwiches",
-  SEAFOOD = "Seafood",
-  PIZZAS = "Pizzas",
-  WINGS_TENDERS = "Wings & Tenders",
-  KIDS_MENU = "Kids Menu",
+  FRESH_GREENS = "Fresh Greens",
+  HAND_HELDS = "Hand Helds",
+  MAC = "Mac",
+  THE_POND = "The Pond",
+  PIES = "Pies",
+  COOP = "Coop",
+  THE_LITTLE_ONES = "The Little ones",
   SIDES = "Sides",
-  DESSERTS = "Desserts",
   BEVERAGES = "Beverages",
+  SWEET_TOOTH = "Sweet Tooth",
+  SPECIALTY_PIES = "Specialty Pies",
 }

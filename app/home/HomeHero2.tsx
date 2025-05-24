@@ -1,5 +1,5 @@
-import React from 'react';
-import Image from 'next/image';
+import React from "react";
+import Image from "next/image";
 
 const Hero2 = () => {
   return (
@@ -12,24 +12,27 @@ const Hero2 = () => {
           foody product
         </h2>
         <p className="mt-4 text-gray-300">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
-          diam pellentesque bibendum non dui volutpat fringilla bibendum.
-          Urna, elit augue urna, vitae feugiat pretium donec id elementum.
-          Ultrices mattis sed vitae mus risus. Lacus nisi, et ac dapibus sit eu
-          velit in consequat.
+          At TheShack, we&apos;re passionate about revolutionizing fast food.
+          Our culinary team combines traditional cooking techniques with modern
+          efficiency, ensuring every dish meets our high standards for taste,
+          freshness, and presentation. We source premium ingredients locally and
+          prepare everything to order.
         </p>
         <ul className="mt-4 space-y-2 leading-[40px]">
           <li className="flex items-center">
-            <span className="text-[#DC143C] mr-2">✔</span> Lacus nisi, et ac dapibus sit eu velit in consequat.
+            <span className="text-[#DC143C] mr-2">✔</span>Fresh ingredients
+            sourced daily from local suppliers
           </li>
           <li className="flex items-center">
-            <span className="text-[#DC143C] mr-2">✔</span> Quisque diam pellentesque bibendum non dui volutpat fringilla
+            <span className="text-[#DC143C] mr-2">✔</span>Expert chefs with
+            over 15 years of culinary experience
           </li>
           <li className="flex items-center">
-            <span className="text-[#DC143C] mr-2">✔</span> Lorem ipsum dolor sit amet, consectetur adipiscing elit
+            <span className="text-[#DC143C] mr-2">✔</span>Lightning-fast
+            service without compromising on quality
           </li>
         </ul>
-        <button className="mt-6 bg-[#DC143C] text-white py-2 px-6 h-[50px] rounded-3xl hover:bg-orange-600">
+        <button className="mt-6 bg-[#DC143C] text-white px-6 py-3 rounded-full hover:bg-black border-[#DC143C] border-[1px]">
           Read More
         </button>
       </div>
