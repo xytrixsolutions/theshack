@@ -3,7 +3,13 @@ import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-const NavLink = ({ href, children }) => {
+const NavLink = ({
+  href,
+  children,
+}: {
+  href: string;
+  children: React.ReactNode;
+}) => {
   const pathname = usePathname();
   const isActive = pathname === href;
 
@@ -24,7 +30,7 @@ const Navbar = () => {
   return (
     <div className="w-full flex justify-center border-b-[1px] border-[#DC143C]">
       <div className="bg-black w-full h-[80px] flex items-center">
-        <div className="flex items-center justify-between max-w-[1320px] w-full mx-auto">
+        <div className="flex items-center justify-between w-full max-w-[1320px] mx-auto px-4">
           {/* Logo Section */}
           <div className="flex items-center text-[24px] font-bold">
             <Link href="/">
@@ -38,8 +44,8 @@ const Navbar = () => {
             className={`${
               isMenuOpen
                 ? "flex flex-col bg-black absolute top-[80px] left-0 w-full space-y-4 py-4 px-6 z-50"
-                : "hidden md:flex space-x-7"
-            } text-white text-[16px] md:static md:flex-row md`}
+                : "hidden"
+            } md:flex md:flex-row md:static md:space-x-7 text-white text-[16px]`}
           >
             <NavLink href="/home">Home</NavLink>
             <NavLink href="/menu">Menu</NavLink>
