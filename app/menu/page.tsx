@@ -76,7 +76,8 @@ const Menu = () => {
       <main className="w-full">
         <div className="grid grid-cols-1 sm:grid-cols-2  lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {filteredProducts.map((product) => (
-            <Link href={`/menu/${product.id}`} key={product.id}>
+            <Link href={`#`} key={product.id}>
+              {/* <Link href={`/menu/${product.id}`} key={product.id}> */}
               <div className="border rounded-lg shadow-md hover:shadow-xl transition-shadow duration-200 p-4">
                 <Image
                   src={product.image}
