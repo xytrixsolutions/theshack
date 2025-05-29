@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React from "react";
 import { PiHamburgerLight, PiCookieLight, PiWineLight } from "react-icons/pi";
 

@@ -13,7 +13,7 @@ const HomeHero2 = () => {
           foody product
         </h2>
         <p className="mt-4 text-gray-300">
-          At TheShack, we're passionate about revolutionizing fast food. Our
+          At TheShack, we&apos;re passionate about revolutionizing fast food. Our
           culinary team combines traditional cooking techniques with modern
           efficiency, ensuring every dish meets our high standards for taste,
           freshness, and presentation. We source premium ingredients locally and
