@@ -9,7 +9,7 @@ export default function Home(): JSX.Element {
   return (
     <div>
       <HomeHero />
-      <MenuCard />
+      {/* <MenuCard /> */}
       <HomeHero2 />
       <HomeHero3 />
       <HomeHero4 />
