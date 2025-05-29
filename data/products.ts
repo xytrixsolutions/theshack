@@ -5,11 +5,10 @@ export const allProducts: Product[] = [
   {
     id: "1",
     name: "SWEET N' STINKY",
-    image: "https://picsum.photos/200/300",
-
+    image: "/images/menu/sweet_n_stinky.jpg",
     price: 9.99,
     description:
-      "Sweet Potato Fries topped with Blue Cheese Crumbles and Green Onions served with Jalapeño Ranch Dressing",
+    "Sweet Potato Fries topped with Blue Cheese Crumbles and Green Onions served with Jalapeño Ranch Dressing",
     category: Category.NIBBLES,
   },
   {
@@ -18,7 +17,7 @@ export const allProducts: Product[] = [
     price: 9.99,
     description: "Served with Sweet Chili Sauce",
     category: Category.NIBBLES,
-    image: "https://picsum.photos/200/300",
+    image: "/images/menu/philly_cheesesteak_eggrolls.jpg",
   },
   {
     id: "3",
@@ -26,7 +25,7 @@ export const allProducts: Product[] = [
     price: 9.99,
     description: "Served with Jalapeño Ranch Dressing",
     category: Category.NIBBLES,
-    image: "https://picsum.photos/200/300",
+    image: "/images/menu/jalapeno_cheese_bratz.jpg",
   },
   {
     id: "4",
@@ -35,7 +34,7 @@ export const allProducts: Product[] = [
     description:
       "Celery Sticks stuffed with Blue Cheese Crumbles, Candied Pecans and drizzled with Honey",
     category: Category.NIBBLES,
-    image: "https://picsum.photos/200/300",
+    image: "/images/menu/blue_cheese_pecan_celery_sticks.jpg",
   },
   {
     id: "5",
@@ -43,7 +42,7 @@ export const allProducts: Product[] = [
     price: 9.99,
     description: "Served with Ranch Dressing",
     category: Category.NIBBLES,
-    image: "https://picsum.photos/200/300",
+    image: "/images/menu/mozarella_bricks.jpg",
   },
   {
     id: "6",
@@ -51,7 +50,7 @@ export const allProducts: Product[] = [
     price: 12.99,
     description: "Garlic Cheese Bread",
     category: Category.NIBBLES,
-    image: "https://picsum.photos/200/300",
+    image: "/images/menu/garlic_cheese_bread.jpg",
   },
 
   // ===== FRESH GREENS =====
@@ -61,7 +60,7 @@ export const allProducts: Product[] = [
     price: 8.99,
     description:
       "Iceberg Lettuce, Tomatoes, Red Onions, Black Olives, Croutons and Mozzarella | Choice of Ranch, Jalapeño Ranch, Blue Cheese, Balsamic Vinaigrette, or Caesar",
-    image: "https://picsum.photos/200/300",
+    image: "/images/menu/shack_house_salad.jpg",
 
     category: Category.FRESH_GREENS,
   },
@@ -71,7 +70,7 @@ export const allProducts: Product[] = [
     price: 9.99,
     description:
       "Romaine Lettuce, Parmesan Cheese, Croutons with Caesar Dressing",
-    image: "https://picsum.photos/200/300",
+    image: "/images/menu/ceaser_salad.jpg",
 
     category: Category.FRESH_GREENS,
   },
@@ -81,7 +80,7 @@ export const allProducts: Product[] = [
     price: 12.99,
     description:
       "Iceberg Lettuce, Crumbled Blue Cheese, Bacon, Grape Tomatoes, Red Onion with Blue Cheese Dressing",
-    image: "https://picsum.photos/200/300",
+    image: "/images/menu/wedge.jpg",
 
     category: Category.FRESH_GREENS,
   },
@@ -91,7 +90,7 @@ export const allProducts: Product[] = [
     price: 14.99,
     description:
       "Mixed Greens, Grilled Chicken Tenders, Candied Pecans, Grape Tomatoes, Blue Cheese Crumbles with Balsamic Vinaigrette",
-    image: "https://picsum.photos/200/300",
+    image: "/images/menu/grilled_chicken_salad.jpg",
 
     category: Category.FRESH_GREENS,
   },
@@ -101,8 +100,7 @@ export const allProducts: Product[] = [
     price: 10.99,
     description:
       "Arugula, Feta, Red Onion, Candied Pecan and Dried Cranberries with Balsamic Vinaigrette Dressing",
-    image: "https://picsum.photos/200/300",
-
+    image: "/images/menu/rustic_argula.jpg",
     category: Category.FRESH_GREENS,
   },
 
@@ -110,7 +108,7 @@ export const allProducts: Product[] = [
   {
     id: "12",
     name: "SHACK MAC",
-    image: "https://picsum.photos/200/300",
+    image: "/images/menu/shack_mac.jpg",
 
     price: 11.99,
     description:
@@ -120,7 +118,7 @@ export const allProducts: Product[] = [
   {
     id: "13",
     name: "SPICY BIRD",
-    image: "https://picsum.photos/200/300",
+    image: "/images/menu/spicy_bird.jpeg",
 
     price: 15.99,
     description:
@@ -130,7 +128,7 @@ export const allProducts: Product[] = [
   {
     id: "14",
     name: "COWBOY",
-    image: "https://picsum.photos/200/300",
+    image: "/images/menu/cowboy.jpeg",
 
     price: 14.99,
     description:
@@ -140,7 +138,7 @@ export const allProducts: Product[] = [
   {
     id: "15",
     name: "SMOKY JOES",
-    image: "https://picsum.photos/200/300",
+    image: "/images/menu/smoky_joes.jpeg",
 
     price: 16.99,
     description: "3 Cheese Mac, Smoked Brisket topped with Fried Onion Strings",
@@ -150,7 +148,7 @@ export const allProducts: Product[] = [
   // ===== HAND_HELDS =====
   {
     id: "16",
-    image: "https://picsum.photos/200/300",
+    image: "/images/menu/cluckin_hen.jpg",
 
     name: "CLUCKING HEN",
     price: 13.99,
@@ -160,7 +158,7 @@ export const allProducts: Product[] = [
   },
   {
     id: "17",
-    image: "https://picsum.photos/200/300",
+    image: "/images/menu/the_redneck.jpg",
 
     name: "THE REDNECK",
     price: 13.99,
@@ -170,7 +168,7 @@ export const allProducts: Product[] = [
   },
   {
     id: "18",
-    image: "https://picsum.photos/200/300",
+    image: "/images/menu/brisket_stack.jpg",
 
     name: "BRISKET STACK",
     price: 15.99,
@@ -180,7 +178,7 @@ export const allProducts: Product[] = [
   },
   {
     id: "19",
-    image: "https://picsum.photos/200/300",
+    image: "/images/menu/shack_double_stack_burger.jpg",
 
     name: "SHACK DOUBLE STACK BURGER",
     price: 14.99,
@@ -194,7 +192,7 @@ export const allProducts: Product[] = [
     price: 13.99,
     description:
       "Beer Battered Cod with Shredded Lettuce, Tomato and Secret Sauce | Served with Fries",
-    image: "https://picsum.photos/200/300",
+    image: "/images/menu/nemo.jpeg",
 
     category: Category.HAND_HELDS,
   },
@@ -204,7 +202,7 @@ export const allProducts: Product[] = [
     id: "21",
     name: "FISH AND CHIPS",
     price: 19.99,
-    image: "https://picsum.photos/200/300",
+    image: "/images/menu/fish_and_chips.jpg",
 
     description: "Beer Battered Cod with Coleslaw and Chunky Chips",
     category: Category.THE_POND,
@@ -214,7 +212,7 @@ export const allProducts: Product[] = [
   {
     id: "22",
     name: "THE STACY",
-    image: "https://picsum.photos/200/300",
+    image: "/images/menu/the_stacy.jpeg",
 
     price: 16.99,
     description:
@@ -224,7 +222,7 @@ export const allProducts: Product[] = [
   {
     id: "23",
     name: "GODFATHER",
-    image: "https://picsum.photos/200/300",
+    image: "/images/menu/god_father.jpeg",
 
     price: 21.99,
     description:
@@ -234,7 +232,7 @@ export const allProducts: Product[] = [
   {
     id: "24",
     name: "BBQ CHICKEN",
-    image: "https://picsum.photos/200/300",
+    image: "/images/menu/bbq_chicken.jpeg",
 
     price: 17.99,
     description:
@@ -244,7 +242,7 @@ export const allProducts: Product[] = [
   {
     id: "25",
     name: "MEAT SWEATS",
-    image: "https://picsum.photos/200/300",
+    image: "/images/menu/meat_sweat.jpeg",
 
     price: 21.99,
     description:
@@ -254,7 +252,7 @@ export const allProducts: Product[] = [
   {
     id: "26",
     name: "BREAKFAST FOR DINNER",
-    image: "https://picsum.photos/200/300",
+    image: "/images/menu/breakfast_for_dinner.jpeg",
 
     price: 19.99,
     description:
@@ -264,7 +262,7 @@ export const allProducts: Product[] = [
   {
     id: "27",
     name: "SURFER DUDE",
-    image: "https://picsum.photos/200/300",
+    image: "/images/menu/suffer_dude.jpeg",
 
     price: 17.99,
     description: "Marinara, Mozzarella, Bacon, Pineapple and Ham",
@@ -274,7 +272,7 @@ export const allProducts: Product[] = [
     id: "28",
     name: "BUFFALO CHICKEN",
     price: 18.99,
-    image: "https://picsum.photos/200/300",
+    image: "/images/menu/buffalo_chicken.jpeg",
 
     description:
       "Ranch Base, Mozzarella, Grilled Chicken, Blue Cheese Crumbles with Franks Red Hot",
@@ -284,7 +282,7 @@ export const allProducts: Product[] = [
     id: "29",
     name: "THE COWBOY",
     price: 18.99,
-    image: "https://picsum.photos/200/300",
+    image: "/images/menu/the_cowboy.jpeg",
 
     description:
       "Jalapeno Ranch Base, Mozzarella, Pulled Pork, Jalapenos with BBQ Sauce",
@@ -296,7 +294,7 @@ export const allProducts: Product[] = [
     price: 18.99,
     description:
       "Fig Jam Base, Dr. Pepper Caramelized Onions, Mushroom and Mozzarella",
-    image: "https://picsum.photos/200/300",
+    image: "/images/menu/high_mintanance.jpeg",
 
     category: Category.SPECIALTY_PIES,
   },
@@ -306,7 +304,7 @@ export const allProducts: Product[] = [
     id: "31",
     name: "TRADITIONAL WINGS (10)",
     price: 10.99,
-    image: "https://picsum.photos/200/300",
+    image: "/images/menu/10_wings.jpeg",
 
     description:
       "Plain, BBQ, Buffalo, Teriyaki, or Sizzling Honey Garlic | Served with Ranch/Blue Cheese",
@@ -316,7 +314,7 @@ export const allProducts: Product[] = [
     id: "32",
     name: "TRADITIONAL WINGS (15)",
     price: 15.99,
-    image: "https://picsum.photos/200/300",
+    image: "/images/menu/15_wings.jpeg",
 
     description:
       "Plain, BBQ, Buffalo, Teriyaki, or Sizzling Honey Garlic | Served with Ranch/Blue Cheese",
@@ -326,7 +324,7 @@ export const allProducts: Product[] = [
     id: "33",
     name: "TRADITIONAL WINGS (25)",
     price: 25.99,
-    image: "https://picsum.photos/200/300",
+    image: "/images/menu/shack_traditional_wings.jpeg",
 
     description:
       "Plain, BBQ, Buffalo, Teriyaki, or Sizzling Honey Garlic | Served with Ranch/Blue Cheese",
@@ -336,7 +334,7 @@ export const allProducts: Product[] = [
     id: "34",
     name: "BONELESS TENDERS (4)",
     price: 12.99,
-    image: "https://picsum.photos/200/300",
+    image: "/images/menu/4_tenders.jpeg",
 
     description: "Grilled or Fried with Fries | Boom Boom Sauce (+$1 Buffalo)",
     category: Category.COOP,
@@ -346,7 +344,7 @@ export const allProducts: Product[] = [
     name: "BONELESS TENDERS (8)",
     price: 18.99,
     description: "Grilled or Fried with Fries | Boom Boom Sauce (+$1 Buffalo)",
-    image: "https://picsum.photos/200/300",
+    image: "/images/menu/8_tenders.jpeg",
 
     category: Category.COOP,
   },
@@ -356,7 +354,7 @@ export const allProducts: Product[] = [
     id: "36",
     name: "CHEESEBURGER & FRIES",
     price: 8.99,
-    image: "https://picsum.photos/200/300",
+    image: "/images/menu/cheeze_burger_with_fries.jpeg",
 
     category: Category.THE_LITTLE_ONES,
   },
@@ -365,19 +363,19 @@ export const allProducts: Product[] = [
     name: "CHICKEN TENDERS & FRIES",
     price: 7.99,
     category: Category.THE_LITTLE_ONES,
-    image: "https://picsum.photos/200/300",
+    image: "/images/menu/chicken_tenders_and_fries.jpeg",
   },
   {
     id: "38",
     name: "MAC AND CHEESE",
     price: 7.99,
-    image: "https://picsum.photos/200/300",
+    image: "/images/menu/mac_and_cheese.jpeg",
 
     category: Category.THE_LITTLE_ONES,
   },
   {
     id: "39",
-    image: "https://picsum.photos/200/300",
+    image: "/images/menu/grilled_cheeze_and_fries.jpeg",
 
     name: "GRILLED CHEESE & FRIES",
     price: 7.99,
@@ -387,7 +385,7 @@ export const allProducts: Product[] = [
   // ===== SIDES =====
   {
     id: "40",
-    image: "https://picsum.photos/200/300",
+    image: "/images/menu/shack_fries.jpeg",
 
     name: "SHACK FRIES",
     price: 4.99,
@@ -398,14 +396,14 @@ export const allProducts: Product[] = [
     name: "SWEET POTATO FRIES",
     price: 4.99,
     category: Category.SIDES,
-    image: "https://picsum.photos/200/300",
+    image: "/images/menu/sweet_potato_fries.jpeg",
   },
   {
     id: "42",
     name: "FRIED ONION STRINGS",
     price: 4.99,
     category: Category.SIDES,
-    image: "https://picsum.photos/200/300",
+    image: "/images/menu/fried_onion_strings.jpeg",
   },
 
   // ===== DESSERTS =====
@@ -414,7 +412,7 @@ export const allProducts: Product[] = [
     name: "HENDOOKIE",
     price: 9.99,
     description: "Baked Chocolate Chip Cookie Dough with Vanilla Ice Cream",
-    image: "https://picsum.photos/200/300",
+    image: "/images/menu/hendookie.jpeg",
 
     category: Category.SWEET_TOOTH,
   },
@@ -423,7 +421,7 @@ export const allProducts: Product[] = [
     name: "SALTED CARAMEL CHEESECAKE",
     price: 8.99,
     category: Category.SWEET_TOOTH,
-    image: "https://picsum.photos/200/300",
+    image: "/images/menu/salted_carmel_cheesecake.jpeg",
   },
   {
     id: "45",
@@ -431,7 +429,7 @@ export const allProducts: Product[] = [
     price: 8.99,
     description: "Cheese Curds with Honey, Cinnamon and Sugar",
     category: Category.SWEET_TOOTH,
-    image: "https://picsum.photos/200/300",
+    image: "/images/menu/i_dare_you.jpeg",
   },
 
   // ===== BEVERAGES =====
@@ -440,27 +438,27 @@ export const allProducts: Product[] = [
     name: "ICED TEA",
     price: 2.75,
     category: Category.BEVERAGES,
-    image: "https://picsum.photos/200/300",
+    image: "/images/menu/ice_tea.jpeg",
   },
   {
     id: "47",
     name: "FOUNTAIN DRINKS",
     price: 2.75,
     category: Category.BEVERAGES,
-    image: "https://picsum.photos/200/300",
+    image: "/images/menu/fountain_drinks.jpeg",
   },
   {
     id: "48",
     name: "SPARKLING WATER",
     price: 3.0,
     category: Category.BEVERAGES,
-    image: "https://picsum.photos/200/300",
+    image: "/images/menu/sparkling_water.jpeg",
   },
   {
     id: "49",
     name: "BOTTLED WATER",
     price: 3.0,
     category: Category.BEVERAGES,
-    image: "https://picsum.photos/200/300",
+    image: "/images/menu/bottled_water.jpeg",
   },
 ];

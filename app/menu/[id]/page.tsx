@@ -1,23 +1,15 @@
 "use client";
 
 import type React from "react";
-
 import { useState, useEffect } from "react";
 import { useParams, useRouter } from "next/navigation";
 import Image from "next/image";
-// import Link from "next/link";
 import {
-  // FaHeart,
-  // FaBalanceScale,
-  // FaStar,
   FaFacebookF,
   FaTwitter,
   FaInstagram,
   FaWhatsapp,
   FaArrowLeft,
-  // FaShoppingCart,
-  // FaMinus,
-  // FaPlus,
 } from "react-icons/fa";
 import { motion } from "framer-motion";
 import type { Product } from "@/types/Product";
@@ -27,11 +19,6 @@ export default function ProductDetailPage() {
   const params = useParams();
   const router = useRouter();
   const [product, setProduct] = useState<Product | null>(null);
-  // const [quantity, setQuantity] = useState(1);
-  // const [isWishlisted, setIsWishlisted] = useState(false);
-  // const [reviewName, setReviewName] = useState("");
-  // const [reviewText, setReviewText] = useState("");
-  // const [rating, setRating] = useState(5);
   const [imageLoaded, setImageLoaded] = useState(false);
 
   useEffect(() => {
@@ -123,7 +110,9 @@ export default function ProductDetailPage() {
                 src={product.image || "/placeholder.svg?height=600&width=600"}
                 alt={product.name}
                 fill
-                className={`object-cover transition-opacity duration-500 ${imageLoaded ? "opacity-100" : "opacity-0"}`}
+                className={`object-cover transition-opacity duration-500 ${
+                  imageLoaded ? "opacity-100" : "opacity-0"
+                }`}
                 onLoad={() => setImageLoaded(true)}
                 priority
               />

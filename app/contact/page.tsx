@@ -32,14 +32,13 @@ const ContactPage = (): JSX.Element => {
     {
       icon: <FaPhoneAlt className="text-2xl text-[#DC143C]" />,
       title: "Phone",
-      value: "+1 (123) 456-7890",
-      href: "tel:+11234567890",
+      value: "+1 (803) 941-7044",
+      href: "tel:+18039417044",
     },
     {
       icon: <FaMapMarkerAlt className="text-2xl text-[#DC143C]" />,
       title: "Address",
-      value:
-        "123 Business Street, Suite 100\nCityville, ST 12345\nUnited States",
+      value: "1250 Chapin Rd, Chapin, SC 29036, United States",
     },
   ];
 

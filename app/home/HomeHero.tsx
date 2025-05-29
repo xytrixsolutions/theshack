@@ -1,35 +1,68 @@
-/* eslint-disable @next/next/no-img-element */
+"use client";
+import React, { useEffect, useRef } from "react";
+import Image from "next/image";
 import Link from "next/link";
-import { FaFacebookF, FaTwitter, FaPinterest } from "react-icons/fa";
+import { FaFacebookF, FaTwitter, FaInstagram } from "react-icons/fa";
 
-const Hero1 = () => {
+const HomeHero = () => {
+  const imageWrapperRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    let angle = 0;
+    let frameId: number;
+
+    const rotate = () => {
+      if (imageWrapperRef.current) {
+        angle += 0.2;
+        imageWrapperRef.current.style.transform = `rotate(${angle}deg)`;
+      }
+      frameId = requestAnimationFrame(rotate);
+    };
+
+    rotate();
+    return () => cancelAnimationFrame(frameId);
+  }, []);
   return (
-    <div className="mt-20">
-      <section className="relative text-white bg-[url('/unsplash_qom5MPOER-I.png')] bg-cover bg-center bg-no-repeat">
-        {/* Overlay for background opacity */}
-        <div className="absolute inset-0 bg-black bg-opacity- z-0"></div>
+    <div className="overflow-x-hidden mt-15">
+      <section className="relative text-white bg-[url('/images/home/unsplash_bpPTlXWTOvg.png')] bg-cover bg-center bg-no-repeat">
+        <div className="absolute inset-0 bg-black bg-opacity-60 z-0"></div>
 
-        <div className="container mx-auto flex flex-col md:flex-row relative z-10">
+        <div className="container mx-auto px-4 flex flex-col md:flex-row relative z-10">
           {/* Left Content */}
           <div className="flex-1 text-center md:text-left relative">
-            {/* Vertical Line with Icons */}
-            <div className="absolute left-1/2 transform -translate-x-1/2 md:left-0 md:ml-[40px] md:translate-x-0 hidden md:flex flex-col items-center gap-10">
+            {/* Social Icons - visible only on large screens */}
+            <div className="absolute hidden lg:flex left-0 ml-[40px] top-1/2 -translate-y-1/2 flex-col items-center gap-10 z-10">
               <div className="h-[135px] w-px bg-white"></div>
               <div className="flex flex-col items-center gap-4">
-                <FaFacebookF className="text-white hover:text-[#DC143C]" />
+                <Link
+                  href="https://www.facebook.com/profile.php?id=61571901758803"
+                  target="_blank"
+                >
+                  <FaFacebookF className="text-white hover:text-[#DC143C]" />
+                </Link>
                 <FaTwitter className="text-white hover:text-[#DC143C]" />
-                <FaPinterest className="text-white hover:text-[#DC143C]" />
+                <FaInstagram className="text-white hover:text-[#DC143C]" />
               </div>
               <div className="h-[135px] w-px bg-white"></div>
             </div>
 
-            {/* Text Content */}
-            <div className="mx-auto px-6 md:ml-[90px] w-full md:w-[472px] mt-8 md:mt-[90px]">
-              <p className="text-[#DC143C] font-normal text-center md:text-left text-lg">
+            <div className="mx-auto px-4 md:ml-[90px] w-full max-w-[472px] mt-8 md:mt-[90px]">
+              {/* <p className="text-[#DC143C] font-normal text-center md:text-left text-lg">
                 Its Quick & Amusing!
-              </p>
+              </p> */}
               <h1 className="text-3xl md:text-[50px] font-bold leading-snug mb-4 text-center md:text-left">
-                <span className="text-[#DC143C]">Th</span>e Art of Speed <br />
+                <span className="text-[#DC143C] ">
+                  {" "}
+                  <Image
+                    src="/images/home/THE_SHACK_PDF-1_new_red_page-0001-removebg-preview (1).png"
+                    alt="Delicious food"
+                    width={80}
+                    height={60}
+                    className="object-contain"
+                  />{" "}
+                  Th
+                </span>
+                e Art of Speed <br />
                 <span>Food Quality</span>
               </h1>
               <p className="text-white text-sm md:text-[14px] mb-6 text-center md:text-left">
@@ -49,12 +82,20 @@ const Hero1 = () => {
           </div>
 
           {/* Right Image */}
-          <div className="flex-1 relative mt-8 md:mt-0">
-            <img
-              src="/Image.png"
-              alt="Delicious food"
-              className="w-full mt-12"
-            />
+          <div className="flex-1 relative mt-8 md:mt-0 max-w-full overflow-hidden">
+            <div
+              ref={imageWrapperRef}
+              className="w-full"
+              style={{ transition: "transform 0.1s linear" }}
+            >
+              <Image
+                src="/images/home/ChatGPT Image May 28, 2025, 07_27_31 PM.png"
+                alt="Delicious food"
+                width={800}
+                height={600}
+                className="w-full h-auto object-contain"
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -62,4 +103,4 @@ const Hero1 = () => {
   );
 };
 
-export default Hero1;
+export default HomeHero;
