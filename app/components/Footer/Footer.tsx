@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 import React from "react";
 import {
   FaFacebookF,
@@ -8,7 +7,7 @@ import {
   FaPinterest,
 } from "react-icons/fa";
 import Image from "next/image";
-import clockwiseimg from "@images/Footer/ClockClockwise.png";
+import clockwiseimg from "../../../public/images/Footer/ClockClockwise.png";
 import Link from "next/link";
 
 const Footer = () => {
@@ -62,9 +61,8 @@ const Footer = () => {
           <h3 className="text-lg font-bold">Help?</h3>
           <ul className="mt-4 text-white space-y-2">
             <li>
-              <Link href="../faqs">FAQs</Link>
+              <Link href="/contact">Support</Link>
             </li>
-            <li>Support</li>
           </ul>
         </div>
 
@@ -72,9 +70,9 @@ const Footer = () => {
         <div>
           <h3 className="text-lg font-bold">Best Dishes</h3>
           <ul className="mt-4 space-y-4">
-            <li className="flex items-center gap-4">
+            <Link className="flex items-center gap-4" href={"/menu"}>
               <img
-                src="/images/Footer/unsplash_50KffXbjIOg.png"
+                src="/images/home/Flux_Schnell_Create_a_highly_realistic_image_of_a_juicy_beef_c_2.jpg"
                 alt="Post Thumbnail"
                 className="w-16 h-16 object-cover"
               />
@@ -83,13 +81,13 @@ const Footer = () => {
                   Fast Food
                 </p>
                 <p className="text-[18px] text-white font-normal">
-                  Zinger Roll
+                  Cheese Burger
                 </p>
               </div>
-            </li>
-            <li className="flex items-center gap-4">
+            </Link>
+            <Link href={"/menu"} className="flex items-center gap-4">
               <img
-                src="/images/Footer/unsplash_CLMpC9UhyTo.png"
+                src="/images/home/Flux_Schnell_Create_a_highly_realistic_image_of_a_mouthwaterin_2.jpg"
                 alt="Post Thumbnail"
                 className="w-16 h-16 object-cover"
               />
@@ -97,12 +95,10 @@ const Footer = () => {
                 <p className="text-gray-400 text-[16px] font-normal">
                   Fried Food
                 </p>
-                <p className="text-[18px] text-white font-normal">
-                  Fried Chicken
-                </p>
+                <p className="text-[18px] text-white font-normal">Fried Fish</p>
               </div>
-            </li>
-            <li className="flex items-center gap-4">
+            </Link>
+            <Link className="flex items-center gap-4" href={"/menu"}>
               <img
                 src="/images/Footer/unsplash_CRoAeTh5S_I.png"
                 alt="Post Thumbnail"
@@ -111,10 +107,10 @@ const Footer = () => {
               <div>
                 <p className="text-gray-400 text-[16px] font-normal">Salads</p>
                 <p className="text-[18px] text-white font-normal">
-                  Russian Salad
+                  Shack House Salad
                 </p>
               </div>
-            </li>
+            </Link>
           </ul>
         </div>
       </div>
@@ -122,16 +118,17 @@ const Footer = () => {
       {/* Footer Bottom */}
       <div className="mt-10  bg-[#4F4F4F] opacity-50 pt-6 h-[99px] md:flex items-center">
         <div className="container mx-auto px-6 lg:px-20 flex flex-col md:flex-row items-center justify-between">
-          <p className="text-gray-50 text-sm">
+          <p className="text-gray-400 text-sm">
             Copyright © 2022 by The Shack. All Rights Reserved.
           </p>
           <div className="flex w-[240px] h-[34px] gap-3">
-            <a
-              href="#"
+            <Link
+              href="https://www.facebook.com/profile.php?id=61571901758803"
+              target="_blank"
               className="bg-white w-[34px] h-[34px] text-black hover:text-[#DC143C] flex justify-center items-center"
             >
               <FaFacebookF size={16} />
-            </a>
+            </Link>
             <a
               href="#"
               className="bg-white w-[34px] h-[34px] text-black hover:text-[#DC143C] flex justify-center items-center"

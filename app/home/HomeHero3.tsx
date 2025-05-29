@@ -1,14 +1,14 @@
-/* eslint-disable @next/next/no-img-element */
+import React from "react";
 import { PiHamburgerLight, PiCookieLight, PiWineLight } from "react-icons/pi";
 
-const Hero4 = () => {
+const HomeHero3 = () => {
   return (
     <section className="flex flex-col md:flex-row bg-black text-white px-10 py-16 md:px-36">
       {/* Left Section - Image Grid */}
       <div className="md:w-1/2 grid grid-cols-2 gap-4">
         {/* Large Top Image */}
         <img
-          src="/images/home//unsplash_lP5MCM6nZ5A.png"
+          src="/images/home/Flux_Dev_A_mouthwatering_BBQ_chicken_smoked_to_perfection_with_0.jpg"
           alt="Tacos"
           className="col-span-2 row-span-2 rounded-md w-full h-[294px] object-cover"
         />
@@ -29,7 +29,7 @@ const Hero4 = () => {
           className="rounded-md w-full h-[140px] object-cover"
         />
         <img
-          src="/images/home/unsplash_mmnKI8kMxpc.png"
+          src="/images/home/Flux_Dev_A_warm_and_freshly_baked_galric_bread_sitting_on_a_ru_0.jpg"
           alt="Salad"
           className="rounded-md w-full h-[140px] object-cover"
         />
@@ -96,4 +96,4 @@ const Hero4 = () => {
   );
 };
 
-export default Hero4;
+export default HomeHero3;
