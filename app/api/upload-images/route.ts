@@ -49,10 +49,9 @@ export async function POST(request: Request) {
           uploadedAt: new Date().toISOString(),
         },
       });
-
-      // Generate public URL (this might need adjustment based on your Netlify setup)
-      const publicUrl = `${process.env.NETLIFY_SITE_URL}/.netlify/blobs/pdf-images/${blobKey}`;
-
+      
+      // Generate URL that uses your API route instead of direct blob access
+      const publicUrl = `${process.env.NETLIFY_SITE_URL || "https://theshack.netlify.app"}/api/images/${blobKey}`;
       uploadedImages.push({
         pageNumber: i + 1,
         url: publicUrl,
