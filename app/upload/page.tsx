@@ -34,6 +34,7 @@ declare global {
 interface UploadedImage {
   pageNumber: number;
   url: string;
+  key: string;
   filename: string;
 }
 
@@ -212,7 +213,7 @@ export default function UploadPDF() {
 
   const getProcessingStatus = () => {
     if (converting) return "Converting PDF pages...";
-    if (uploading) return "Uploading to cloud storage...";
+    if (uploading) return "Uploading to Netlify Blobs...";
     return null;
   };
 
@@ -223,7 +224,7 @@ export default function UploadPDF() {
           PDF to Image Converter
         </h1>
         <p className="text-gray-600 mb-4">
-          Convert PDF pages to images and store them in cloud storage
+          Convert PDF pages to images and store them in Netlify Blob storage
         </p>
 
         <input
@@ -246,7 +247,7 @@ export default function UploadPDF() {
         >
           {converting || uploading
             ? getProcessingStatus()
-            : "Convert & Upload to Cloud"}
+            : "Convert & Upload to Netlify"}
         </button>
 
         {(progress || uploadProgress) && (
@@ -273,7 +274,7 @@ export default function UploadPDF() {
             {uploadProgress && (
               <div>
                 <div className="flex justify-between text-sm text-gray-600 mb-1">
-                  <span>Uploading to cloud...</span>
+                  <span>Uploading to Netlify...</span>
                   <span>Processing batch upload...</span>
                 </div>
                 <div className="w-full bg-gray-200 rounded-full h-2">
@@ -295,12 +296,12 @@ export default function UploadPDF() {
         <div className="bg-white p-6 rounded-lg shadow-md">
           <div className="mb-4">
             <h3 className="font-semibold text-lg text-gray-800">
-              Cloud Storage Results
+              Netlify Blob Storage Results
             </h3>
             <p className="text-sm text-gray-600">
               {uploadedImages.length} image
               {uploadedImages.length > 1 ? "s" : ""} uploaded successfully to
-              Vercel Blob
+              Netlify Blobs
             </p>
           </div>
 
