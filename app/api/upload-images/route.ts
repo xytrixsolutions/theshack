@@ -1,6 +1,6 @@
 // app/api/upload-images/route.ts
 import { NextResponse } from "next/server";
-import { put } from "@vercel/blob";
+import { getStore } from "@netlify/blobs";
 
 export async function POST(request: Request) {
   try {
@@ -14,6 +14,13 @@ export async function POST(request: Request) {
       );
     }
 
+    // Initialize Netlify Blob store
+    const store = getStore({
+      name: "pdf-images",
+      siteID: process.env.NETLIFY_SITE_ID,
+      token: process.env.NETLIFY_TOKEN,
+    });
+
     const uploadedImages = [];
 
     for (let i = 0; i < images.length; i++) {
@@ -23,20 +30,34 @@ export async function POST(request: Request) {
       const base64Data = imageDataUrl.replace(/^data:image\/\w+;base64,/, "");
       const buffer = Buffer.from(base64Data, "base64");
 
-      // Generate filename
-      const baseFilename = filename?.replace(".pdf", "") || "converted";
-      const imageFilename = `${baseFilename}-page-${i + 1}-${Date.now()}.png`;
+      // Convert Buffer to ArrayBuffer for Netlify Blobs
+      const arrayBuffer = buffer.buffer.slice(
+        buffer.byteOffset,
+        buffer.byteOffset + buffer.byteLength,
+      );
 
-      // Upload to Vercel Blob
-      const blob = await put(imageFilename, buffer, {
-        access: "public",
-        contentType: "image/png",
+      // Generate unique key for the blob
+      const baseFilename = filename?.replace(".pdf", "") || "converted";
+      const blobKey = `${baseFilename}-page-${i + 1}-${Date.now()}.png`;
+
+      // Upload to Netlify Blob
+      await store.set(blobKey, arrayBuffer, {
+        metadata: {
+          contentType: "image/png",
+          pageNumber: i + 1,
+          originalFilename: filename,
+          uploadedAt: new Date().toISOString(),
+        },
       });
+
+      // Generate public URL (this might need adjustment based on your Netlify setup)
+      const publicUrl = `${process.env.NETLIFY_SITE_URL}/.netlify/blobs/pdf-images/${blobKey}`;
 
       uploadedImages.push({
         pageNumber: i + 1,
-        url: blob.url,
-        filename: imageFilename,
+        url: publicUrl,
+        key: blobKey,
+        filename: `${baseFilename}-page-${i + 1}.png`,
       });
     }
 
@@ -46,9 +67,9 @@ export async function POST(request: Request) {
       count: uploadedImages.length,
     });
   } catch (error) {
-    console.error("Blob upload error:", error);
+    console.error("Netlify Blob upload error:", error);
     return NextResponse.json(
-      { error: "Failed to upload images to blob storage" },
+      { error: "Failed to upload images to Netlify blob storage" },
       { status: 500 },
     );
   }
