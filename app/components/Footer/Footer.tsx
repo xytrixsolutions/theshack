@@ -1,52 +1,48 @@
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
-import {
-  FaFacebookF,
-  FaTwitter,
-  FaInstagram,
-  FaYoutube,
-  FaPinterest,
-} from "react-icons/fa";
+import { FaFacebookF, FaInstagram } from "react-icons/fa";
+import { IoMailOutline } from "react-icons/io5";
 import Image from "next/image";
 import clockwiseimg from "../../../public/images/Footer/ClockClockwise.png";
 import Link from "next/link";
 
 const Footer = () => {
   return (
-    <footer className="bg-black text-white  items-center w-full">
+    <footer className="bg-white text-black w-full">
       {/* Main Content */}
-      <div className="container mx-auto px-6 lg:px-20 grid grid-cols-1 lg:grid-cols-4 gap-10 mt-10 py-20 md:border-t-[1px] border-[#DC143C]">
-        {/* About Us */}
-        <div>
-          <h3 className="text-lg font-bold">About Us</h3>
-          <p className="text-white mt-4">
-            Corporate clients and leisure travelers have been relying on
-            Groundlink for dependable, safe, and professional chauffeured car
-            service in major cities across the world.
-          </p>
-          <div className="mt-6 flex items-center gap-2">
-            <div className="w-[78px] h-[72px] rounder-[3px] bg-[#DC143C] flex justify-center items-center">
-              <div>
-                <Image
-                  src={clockwiseimg}
-                  alt="clockwise"
-                  width={40}
-                  height={40}
-                />
-              </div>
+      <div className="container mx-auto px-6 lg:px-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[repeat(4,minmax(0,1fr))] gap-x-14 gap-y-10 mt-10 py-20 border-t border-[#DC143C] text-white">
+        {/* Opening Hours */}
+        <div className="flex flex-col gap-4 max-w-[220px]">
+          <div className="flex items-start gap-4">
+            <div className="min-w-[60px] h-[60px] rounded bg-[#DC143C] flex justify-center items-center">
+              <Image
+                src={clockwiseimg}
+                alt="clockwise"
+                width={36}
+                height={36}
+              />
             </div>
-            <div>
-              <h4 className="font-bold">Opening Hours</h4>
-              <p className="text-white mt-2">Mon - Sat (8.00 - 6.00)</p>
-              <p className="text-white">Sunday - Closed</p>
+            <div className="flex-1 text-black">
+              <h4 className="font-bold text-lg text-[#DC143C]">
+                Opening Hours
+              </h4>
+              <p className="mt-1 text-sm text-pretty">
+                Sunday - Thursday: 11:00 AM - 10:00 PM
+              </p>
+              <p className="mt-1 text-sm">
+                Friday - Saturday: 11:00 AM - 10:00 PM
+              </p>
+              <p className="mt-1 text-sm">Monday: Closed</p>
             </div>
           </div>
         </div>
 
         {/* Useful Links */}
-        <div>
-          <h3 className="text-lg font-bold">Useful Links</h3>
-          <ul className="mt-4 text-white space-y-2">
+        <div className="text-black">
+          <h3 className="text-lg font-bold mb-2 text-[#DC143C] ">
+            Useful Links
+          </h3>
+          <ul className="space-y-1 text-sm">
             <li>
               <Link href="/home">Home</Link>
             </li>
@@ -58,102 +54,85 @@ const Footer = () => {
             </li>
           </ul>
         </div>
-        <div>
-          <h3 className="text-lg font-bold">Help?</h3>
-          <ul className="mt-4 text-white space-y-2">
+
+        {/* Need Help */}
+        <div className="text-black">
+          <h3 className="text-lg font-bold mb-2 text-[#DC143C]">Need Help?</h3>
+          <ul className="space-y-1 text-sm">
             <li>
               <Link href="/contact">Support</Link>
             </li>
           </ul>
         </div>
 
-        {/* Recent Posts */}
+        {/* Best Dishes */}
         <div>
-          <h3 className="text-lg font-bold">Best Dishes</h3>
-          <ul className="mt-4 space-y-4">
-            <Link className="flex items-center gap-4" href={"/menu"}>
-              <img
-                src="/images/home/Flux_Schnell_Create_a_highly_realistic_image_of_a_juicy_beef_c_2.jpg"
-                alt="Post Thumbnail"
-                className="w-16 h-16 object-cover"
-              />
-              <div>
-                <p className="text-gray-400 text-[16px] font-normal">
-                  Fast Food
-                </p>
-                <p className="text-[18px] text-white font-normal">
-                  Cheese Burger
-                </p>
-              </div>
-            </Link>
-            <Link href={"/menu"} className="flex items-center gap-4">
-              <img
-                src="/images/home/Flux_Schnell_Create_a_highly_realistic_image_of_a_mouthwaterin_2.jpg"
-                alt="Post Thumbnail"
-                className="w-16 h-16 object-cover"
-              />
-              <div>
-                <p className="text-gray-400 text-[16px] font-normal">
-                  Fried Food
-                </p>
-                <p className="text-[18px] text-white font-normal">Fried Fish</p>
-              </div>
-            </Link>
-            <Link className="flex items-center gap-4" href={"/menu"}>
-              <img
-                src="/images/Footer/unsplash_CRoAeTh5S_I.png"
-                alt="Post Thumbnail"
-                className="w-16 h-16 object-cover"
-              />
-              <div>
-                <p className="text-gray-400 text-[16px] font-normal">Salads</p>
-                <p className="text-[18px] text-white font-normal">
-                  Shack House Salad
-                </p>
-              </div>
-            </Link>
+          <h3 className="text-lg font-bold mb-2 text-[#DC143C]">Best Dishes</h3>
+          <ul className="space-y-3">
+            {[
+              {
+                src: "/images/home/Flux_Schnell_Create_a_highly_realistic_image_of_a_juicy_beef_c_2.jpg",
+                category: "Fast Food",
+                name: "Cheese Burger",
+              },
+              {
+                src: "/images/home/Flux_Schnell_Create_a_highly_realistic_image_of_a_mouthwaterin_2.jpg",
+                category: "Fried Food",
+                name: "Fried Fish",
+              },
+              {
+                src: "/images/Footer/unsplash_CRoAeTh5S_I.png",
+                category: "Salads",
+                name: "Shack House Salad",
+              },
+            ].map(({ src, category, name }, i) => (
+              <li key={i} className="flex items-center gap-3">
+                <img
+                  src={src}
+                  alt={name}
+                  className="w-14 h-14 object-cover rounded"
+                />
+                <div>
+                  <p className="text-[#DC143C] text-sm">{category}</p>
+                  <p className="text-black text-base">{name}</p>
+                </div>
+              </li>
+            ))}
           </ul>
         </div>
       </div>
 
       {/* Footer Bottom */}
-      <div className="mt-10  bg-[#4F4F4F] opacity-50 pt-6 h-[99px] md:flex items-center">
+      <div className="bg-[#DC143C] bg-opacity-50 py-6">
         <div className="container mx-auto px-6 lg:px-20 flex flex-col md:flex-row items-center justify-between">
-          <p className="text-gray-400 text-sm">
-            Copyright © 2022 by The Shack. All Rights Reserved.
+          <p className="text-white text-sm mb-4 md:mb-0">
+            © 2022 The Shack. All Rights Reserved.
           </p>
-          <div className="flex w-[240px] h-[34px] gap-3">
-            <Link
-              href="https://www.facebook.com/profile.php?id=61571901758803"
-              target="_blank"
-              className="bg-white w-[34px] h-[34px] text-black hover:text-[#DC143C] flex justify-center items-center"
-            >
-              <FaFacebookF size={16} />
-            </Link>
-            <a
-              href="#"
-              className="bg-white w-[34px] h-[34px] text-black hover:text-[#DC143C] flex justify-center items-center"
-            >
-              <FaTwitter size={16} />
-            </a>
-            <a
-              href="#"
-              className="bg-white w-[34px] h-[34px] text-black hover:text-[#DC143C] flex justify-center items-center"
-            >
-              <FaInstagram size={16} />
-            </a>
-            <a
-              href="#"
-              className="bg-white w-[34px] h-[34px] text-black hover:text-[#DC143C] flex justify-center items-center"
-            >
-              <FaYoutube size={16} />
-            </a>
-            <a
-              href="#"
-              className="bg-white w-[34px] h-[34px] text-black hover:text-[#DC143C] flex justify-center items-center"
-            >
-              <FaPinterest size={16} />
-            </a>
+          <div className="flex gap-3">
+            {[
+              {
+                href: "https://www.facebook.com/profile.php?id=61571901758803",
+                icon: <FaFacebookF size={16} />,
+              },
+              {
+                href: "https://www.instagram.com/theshackchapin/",
+                icon: <FaInstagram size={16} />,
+              },
+              {
+                href: "mailto:theshackchapin@gmail.com",
+                icon: <IoMailOutline size={16} />,
+              },
+            ].map(({ href, icon }, i) => (
+              <a
+                key={i}
+                href={href}
+                target="_blank"
+                className="bg-white w-[34px] h-[34px] text-black hover:text-[#DC143C] flex justify-center items-center rounded"
+                rel="noopener noreferrer"
+              >
+                {icon}
+              </a>
+            ))}
           </div>
         </div>
       </div>

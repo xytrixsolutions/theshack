@@ -1,0 +1,19 @@
+[
+  {
+    "icon": "FaEnvelope",
+    "title": "Email",
+    "value": "theshackchapin@gmail.com",
+    "href": "mailto:theshackchapin@gmail.com"
+  },
+  {
+    "icon": "FaPhoneAlt",
+    "title": "Phone",
+    "value": "+1 (803) 941-7044",
+    "href": "tel:+18039417044"
+  },
+  {
+    "icon": "FaMapMarkerAlt",
+    "title": "Address",
+    "value": "1250 Chapin Rd, Chapin, SC 29036, United States"
+  }
+]

@@ -97,8 +97,9 @@ const HomeHero4 = () => {
                 {testimonials.map((_, i) => (
                   <div
                     key={i}
-                    className={`h-3 w-3 rounded-full shadow-md transition duration-300 ${i === currentIndex ? "bg-[#DC143C]" : "bg-gray-500"
-                      }`}
+                    className={`h-3 w-3 rounded-full shadow-md transition duration-300 ${
+                      i === currentIndex ? "bg-[#DC143C]" : "bg-gray-500"
+                    }`}
                   ></div>
                 ))}
               </div>
