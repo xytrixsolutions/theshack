@@ -4,10 +4,10 @@ import { getStore } from "@netlify/blobs";
 
 export async function GET(
   _request: Request,
-  { params }: { params: { key: string } },
+  { params }: { params: Promise<{ key: string }> },
 ) {
   try {
-    const { key } = params;
+    const { key } = await params;
 
     if (!key) {
       return NextResponse.json(
