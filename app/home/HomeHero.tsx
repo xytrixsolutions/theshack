@@ -1,96 +1,94 @@
 "use client";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { FaFacebookF, FaTwitter, FaInstagram } from "react-icons/fa";
+import { FaFacebookF, FaInstagram } from "react-icons/fa";
+import { IoMailOutline } from "react-icons/io5";
+import { SeeMenu } from "../components/SeeMenu";
+
+const images = [
+  "/images/home/slidemenu1.jpg",
+  "/images/home/slidemenu2.jpg",
+  "/images/home/slidemenu3.jpg",
+  "/images/home/slidemenu4.jpg",
+  "/images/home/slidemenu5.jpg",
+  "/images/home/slidemenu6.jpg",
+  "/images/home/slidemenu7.jpg",
+];
 
 const HomeHero = () => {
-  const imageWrapperRef = useRef<HTMLDivElement>(null);
+  const [current, setCurrent] = useState(0);
 
+  // Auto-slide
   useEffect(() => {
-    let angle = 0;
-    let frameId: number;
-
-    const rotate = () => {
-      if (imageWrapperRef.current) {
-        angle += 0.2;
-        imageWrapperRef.current.style.transform = `rotate(${angle}deg)`;
-      }
-      frameId = requestAnimationFrame(rotate);
-    };
-
-    rotate();
-    return () => cancelAnimationFrame(frameId);
+    const interval = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % images.length);
+    }, 3000); // Change every 3 seconds
+    return () => clearInterval(interval);
   }, []);
+
   return (
     <div className="overflow-x-hidden mt-15">
       <section className="relative text-white bg-[url('/images/home/unsplash_bpPTlXWTOvg.png')] bg-cover bg-center bg-no-repeat">
-        <div className="absolute inset-0 bg-black bg-opacity-60 z-0"></div>
+        <div className="absolute inset-0 bg-opacity-60 z-0"></div>
 
         <div className="container mx-auto px-4 flex flex-col md:flex-row relative z-10">
           {/* Left Content */}
           <div className="flex-1 text-center md:text-left relative">
-            {/* Social Icons - visible only on large screens */}
+            {/* Social Icons */}
             <div className="absolute hidden lg:flex left-0 ml-[40px] top-1/2 -translate-y-1/2 flex-col items-center gap-10 z-10">
-              <div className="h-[135px] w-px bg-white"></div>
+              <div className="h-[135px] w-px bg-[#DC143C]"></div>
               <div className="flex flex-col items-center gap-4">
                 <Link
                   href="https://www.facebook.com/profile.php?id=61571901758803"
                   target="_blank"
                 >
-                  <FaFacebookF className="text-white hover:text-[#DC143C]" />
+                  <FaFacebookF className="text-black hover:text-[#DC143C]" />
                 </Link>
-                <FaTwitter className="text-white hover:text-[#DC143C]" />
-                <FaInstagram className="text-white hover:text-[#DC143C]" />
+                <Link
+                  href="https://www.instagram.com/theshackchapin/"
+                  target="_blank"
+                >
+                  <FaInstagram className="text-black hover:text-[#DC143C]" />
+                </Link>
+                <Link href="mailto:theshackchapin@gmail.com" target="_blank">
+                  <IoMailOutline className="text-black hover:text-[#DC143C]" />
+                </Link>
               </div>
-              <div className="h-[135px] w-px bg-white"></div>
+              <div className="h-[135px] w-px bg-[#DC143C]"></div>
             </div>
 
             <div className="mx-auto px-4 md:ml-[90px] w-full max-w-[472px] mt-8 md:mt-[90px]">
-              {/* <p className="text-[#DC143C] font-normal text-center md:text-left text-lg">
-                Its Quick & Amusing!
-              </p> */}
-              <h1 className="text-3xl md:text-[50px] font-bold leading-snug mb-4 text-center md:text-left">
-                <span className="text-[#DC143C] ">
-                  {" "}
-                  <Image
+              <h1 className="text-[#DC143C] text-3xl md:text-[50px] font-bold leading-snug mb-4 text-center md:text-left">
+                {/* <Image
                     src="/images/home/THE_SHACK_PDF-1_new_red_page-0001-removebg-preview (1).png"
                     alt="Delicious food"
                     width={80}
                     height={60}
                     className="object-contain"
-                  />{" "}
-                  Th
-                </span>
-                e Art of Speed <br />
-                <span>Food Quality</span>
+                  /> */}
+                <span className="text-[#DC143C]">Awesome Food ;</span>
+                <br />
+                <span>Lake Attitude</span>
               </h1>
-              <p className="text-white text-sm md:text-[14px] mb-6 text-center md:text-left">
-                Experience the perfect fusion of lightning-fast service and
-                exceptional taste. Our chefs craft every dish with premium
-                ingredients, delivering restaurant-quality meals in minutes, not
-                hours.
+              <p className="text-black text-sm md:text-[14px] mb-6 text-center md:text-left">
+                At The Shack we recreate all your family favorite meals ranging
+                from pizza, handhelds, mac and cheese and our house specialty
+                fish and chips! Experience our laid back vibe and 5 star food
+                and service.
               </p>
               <div className="text-center md:text-left">
-                <Link href="../menu">
-                  <button className="bg-[#DC143C] text-white px-6 py-3 rounded-full hover:bg-black border-[#DC143C] border-[1px]">
-                    See Menu
-                  </button>
-                </Link>
+                <SeeMenu />
               </div>
             </div>
           </div>
 
-          {/* Right Image */}
+          {/* Right Image Carousel */}
           <div className="flex-1 relative mt-8 md:mt-0 max-w-full overflow-hidden">
-            <div
-              ref={imageWrapperRef}
-              className="w-full"
-              style={{ transition: "transform 0.1s linear" }}
-            >
+            <div className="w-full h-full transition-all duration-700">
               <Image
-                src="/images/home/ChatGPT Image May 28, 2025, 07_27_31 PM.png"
-                alt="Delicious food"
+                src={images[current]}
+                alt={`Slide ${current + 1}`}
                 width={800}
                 height={600}
                 className="w-full h-auto object-contain"

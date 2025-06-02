@@ -2,6 +2,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import Image from "next/image";
 
 const NavLink = ({
   href,
@@ -29,23 +30,27 @@ const Navbar = () => {
 
   return (
     <div className="w-full flex justify-center border-b-[1px] border-[#DC143C]">
-      <div className="bg-black w-full h-[80px] flex items-center">
+      <div className="w-full h-[80px] flex items-center">
         <div className="flex items-center justify-between w-full max-w-[1320px] mx-auto px-4">
           {/* Logo Section */}
-          <div className="flex items-center text-[24px] font-bold">
-            <Link href="/">
-              <span className="text-white">The</span>
-              <span className="text-[#DC143C]">Shack</span>
-            </Link>
+          <div className="text-2xl font-extrabold text-[#DC143C] flex items-center gap-1">
+            <Image
+              src="/images/home/THE_SHACK_PDF-1_new_red_page-0001-removebg-preview (1).png"
+              alt="Delicious food"
+              width={40}
+              height={40}
+              className="object-contain"
+            />
+            <span>The</span>
+            <span className="text-[#DC143C]">Shack</span>
           </div>
-
           {/* Navigation Links */}
           <nav
             className={`${
               isMenuOpen
                 ? "flex flex-col bg-black absolute top-[80px] left-0 w-full space-y-4 py-4 px-6 z-50"
                 : "hidden"
-            } md:flex md:flex-row md:static md:space-x-7 text-white text-[16px]`}
+            } md:flex md:flex-row md:static md:space-x-7 text-[16px]`}
           >
             <NavLink href="/home">Home</NavLink>
             <NavLink href="/menu">Menu</NavLink>
