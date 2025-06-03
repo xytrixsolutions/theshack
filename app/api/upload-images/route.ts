@@ -73,3 +73,41 @@ export async function POST(request: Request) {
     );
   }
 }
+export async function DELETE(request: Request) {
+  try {
+    const body = await request.json();
+    const { keys } = body;
+
+    if (!Array.isArray(keys) || keys.length === 0) {
+      return NextResponse.json(
+        { error: "An array of blob keys is required" },
+        { status: 400 },
+      );
+    }
+
+    const store = getStore({
+      name: "pdf-images",
+      siteID: process.env.NETLIFY_SITE_ID,
+      token: process.env.NETLIFY_TOKEN,
+    });
+
+    const deleted = [];
+
+    for (const key of keys) {
+      await store.delete(key);
+      deleted.push(key);
+    }
+
+    return NextResponse.json({
+      success: true,
+      deleted,
+      count: deleted.length,
+    });
+  } catch (error) {
+    console.error("Netlify Blob delete error:", error);
+    return NextResponse.json(
+      { error: "Failed to delete images from Netlify blob storage" },
+      { status: 500 },
+    );
+  }
+}

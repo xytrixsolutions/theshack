@@ -2,6 +2,7 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
 import { useState } from "react";
+import { CheckCircle, ExternalLink } from "lucide-react";
 
 // PDF.js types (simplified)
 declare global {
@@ -52,6 +53,7 @@ export default function UploadPDF() {
     current: number;
     total: number;
   } | null>(null);
+  const [uploadComplete, setUploadComplete] = useState(false);
 
   const loadPdfJs = async (): Promise<void> => {
     return new Promise((resolve, reject) => {
@@ -64,7 +66,6 @@ export default function UploadPDF() {
       script.src =
         "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js";
       script.onload = () => {
-        // Set up the worker
         window.pdfjsLib.GlobalWorkerOptions.workerSrc =
           "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
         resolve();
@@ -90,12 +91,13 @@ export default function UploadPDF() {
 
     for (let pageNum = 1; pageNum <= numPages; pageNum++) {
       const page = await pdf.getPage(pageNum);
-
-      // Set scale for good quality (1.5 = 150% of original size)
-      const scale = 1.5;
+      const originalViewport = page.getViewport({ scale: 1.0 });
+      const targetHeight = 1600;
+      const targetWidth = 800;
+      const heightScale = targetHeight / originalViewport.height;
+      const widthScale = targetWidth / originalViewport.width;
+      const scale = Math.max(heightScale, widthScale, 0.8);
       const viewport = page.getViewport({ scale });
-
-      // Create canvas
       const canvas = document.createElement("canvas");
       const context = canvas.getContext("2d");
 
@@ -103,26 +105,63 @@ export default function UploadPDF() {
         throw new Error("Could not get canvas context");
       }
 
-      canvas.height = viewport.height;
-      canvas.width = viewport.width;
+      canvas.width = Math.floor(viewport.width);
+      canvas.height = Math.floor(viewport.height);
+      canvas.style.width = `${viewport.width}px`;
+      canvas.style.height = `${viewport.height}px`;
 
-      // Render PDF page to canvas
       const renderContext = {
         canvasContext: context,
         viewport: viewport,
       };
 
       await page.render(renderContext).promise;
-
-      // Convert canvas to image data URL
-      const imageDataUrl = canvas.toDataURL("image/png", 0.9);
+      const imageDataUrl = canvas.toDataURL("image/png", 0.95);
       images.push(imageDataUrl);
-
-      // Update progress
       setProgress({ current: pageNum, total: numPages });
     }
 
     return images;
+  };
+
+  const deleteExistingBlobs = async (): Promise<void> => {
+    try {
+      // Fetch the list of existing blobs from the Netlify store
+      const response = await fetch("/api/list-blobs", {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to fetch existing blobs");
+      }
+
+      const { blobs } = await response.json();
+
+      if (blobs.length === 0) {
+        return;
+      }
+
+      // Delete the existing blobs
+      const deleteResponse = await fetch("/api/upload-images", {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ keys: blobs.map((blob: any) => blob.key) }),
+      });
+
+      if (!deleteResponse.ok) {
+        const errorData = await deleteResponse.json();
+        throw new Error(errorData.error || "Failed to delete existing blobs");
+      }
+    } catch (err) {
+      throw new Error(
+        err instanceof Error ? err.message : "Failed to delete existing blobs",
+      );
+    }
   };
 
   const uploadImagesToBlob = async (
@@ -169,10 +208,14 @@ export default function UploadPDF() {
     setError(null);
     setProgress(null);
     setUploadProgress(null);
+    setUploadComplete(false);
 
     try {
       // Load PDF.js if not already loaded
       await loadPdfJs();
+
+      // Delete existing blobs before uploading new ones
+      await deleteExistingBlobs();
 
       // Convert PDF to images
       const convertedImages = await convertPdfToImages(file);
@@ -180,12 +223,13 @@ export default function UploadPDF() {
       setConverting(false);
       setUploading(true);
 
-      // Upload images to Vercel Blob
+      // Upload images to Netlify Blobs
       const uploadedImagesData = await uploadImagesToBlob(
         convertedImages,
         file.name,
       );
       setUploadedImages(uploadedImagesData);
+      setUploadComplete(true);
     } catch (err) {
       const message = err instanceof Error ? err.message : "Process failed";
       setError(message);
@@ -200,7 +244,6 @@ export default function UploadPDF() {
 
   const copyUrl = (url: string) => {
     navigator.clipboard.writeText(url);
-    // You could add a toast notification here
   };
 
   const downloadFromUrl = (url: string, filename: string) => {
@@ -217,6 +260,15 @@ export default function UploadPDF() {
     return null;
   };
 
+  const handleNewUpload = () => {
+    setFile(null);
+    setUploadedImages([]);
+    setError(null);
+    setUploadComplete(false);
+    setProgress(null);
+    setUploadProgress(null);
+  };
+
   return (
     <div className="p-4 space-y-4 max-w-4xl mx-auto">
       <div className="bg-white p-6 rounded-lg shadow-md">
@@ -224,8 +276,41 @@ export default function UploadPDF() {
           PDF to Image Converter
         </h1>
         <p className="text-gray-600 mb-4">
-          Convert PDF pages to images and store them in Netlify Blob storage
+          Convert PDF pages to images and store them in Netlify Blob storage.
+          Images are automatically scaled to optimize both width and height for
+          better content fitting.
         </p>
+
+        {uploadComplete && (
+          <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg">
+            <div className="flex items-center gap-3">
+              <CheckCircle className="w-6 h-6 text-green-600" />
+              <div>
+                <h3 className="font-semibold text-green-800">
+                  Upload Complete!
+                </h3>
+                <p className="text-green-700 text-sm">
+                  Your menu has been successfully uploaded and is now live.
+                </p>
+              </div>
+            </div>
+            <div className="mt-3 flex gap-3">
+              <a
+                href="/menu"
+                className="inline-flex items-center gap-2 px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors text-sm"
+              >
+                <ExternalLink className="w-4 h-4" />
+                View Live Menu
+              </a>
+              <button
+                onClick={handleNewUpload}
+                className="px-4 py-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition-colors text-sm"
+              >
+                Upload New Menu
+              </button>
+            </div>
+          </div>
+        )}
 
         <input
           type="file"
@@ -236,6 +321,7 @@ export default function UploadPDF() {
             setError(null);
             setProgress(null);
             setUploadProgress(null);
+            setUploadComplete(false);
           }}
           className="block w-full text-sm text-gray-700 file:mr-4 file:py-2 file:px-4 file:rounded file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100 mb-4"
         />
@@ -301,7 +387,7 @@ export default function UploadPDF() {
             <p className="text-sm text-gray-600">
               {uploadedImages.length} image
               {uploadedImages.length > 1 ? "s" : ""} uploaded successfully to
-              Netlify Blobs
+              Netlify Blobs with optimized dimensions
             </p>
           </div>
 
