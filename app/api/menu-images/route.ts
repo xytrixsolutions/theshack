@@ -1,6 +1,13 @@
 // app/api/menu-images/route.ts
 import { NextResponse } from "next/server";
 import { getStore, ListResultBlob } from "@netlify/blobs";
+type BlobWithMetadata = ListResultBlob & {
+  metadata?: {
+    uploadedAt?: string;
+    pageNumber?: string;
+    originalFilename?: string;
+  };
+};
 
 export async function GET() {
   try {
@@ -23,7 +30,7 @@ export async function GET() {
     }
 
     // Sort blobs by upload time (most recent first) and group by filename base
-    const sortedBlobs = (blobs as ListResultBlob[])
+    const sortedBlobs = (blobs as BlobWithMetadata[])
       .filter((blob) => blob.key.includes(".png"))
       .sort((a, b) => {
         const aTime = new Date(
@@ -59,7 +66,7 @@ export async function GET() {
     const menuImages = recentImages
       .map((blob) => ({
         pageNumber: (blob.metadata?.pageNumber as string | undefined)
-          ? parseInt(blob.metadata.pageNumber as string, 10)
+          ? parseInt(blob.metadata?.pageNumber as string, 10)
           : 1,
         url: `${process.env.NETLIFY_SITE_URL || "https://theshack.netlify.app"}/api/images/${blob.key}`,
         key: blob.key,
