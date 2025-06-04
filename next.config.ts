@@ -2,7 +2,13 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   images: {
-    domains: ["theshack.netlify.app"],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "theshack.netlify.app",
+        pathname: "/**", // allows all image paths
+      },
+    ],
   },
 };
 

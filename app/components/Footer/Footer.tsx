@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 import React from "react";
 import { FaFacebookF, FaInstagram } from "react-icons/fa";
 import { IoMailOutline } from "react-icons/io5";
@@ -62,42 +61,6 @@ const Footer = () => {
             <li>
               <Link href="/contact">Support</Link>
             </li>
-          </ul>
-        </div>
-
-        {/* Best Dishes */}
-        <div>
-          <h3 className="text-lg font-bold mb-2 text-[#DC143C]">Best Dishes</h3>
-          <ul className="space-y-3">
-            {[
-              {
-                src: "/images/home/Flux_Schnell_Create_a_highly_realistic_image_of_a_juicy_beef_c_2.jpg",
-                category: "Fast Food",
-                name: "Cheese Burger",
-              },
-              {
-                src: "/images/home/Flux_Schnell_Create_a_highly_realistic_image_of_a_mouthwaterin_2.jpg",
-                category: "Fried Food",
-                name: "Fried Fish",
-              },
-              {
-                src: "/images/Footer/unsplash_CRoAeTh5S_I.png",
-                category: "Salads",
-                name: "Shack House Salad",
-              },
-            ].map(({ src, category, name }, i) => (
-              <li key={i} className="flex items-center gap-3">
-                <img
-                  src={src}
-                  alt={name}
-                  className="w-14 h-14 object-cover rounded"
-                />
-                <div>
-                  <p className="text-[#DC143C] text-sm">{category}</p>
-                  <p className="text-black text-base">{name}</p>
-                </div>
-              </li>
-            ))}
           </ul>
         </div>
       </div>
