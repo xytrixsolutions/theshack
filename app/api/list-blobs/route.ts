@@ -1,8 +1,9 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { NextResponse } from "next/server";
 import { getStore } from "@netlify/blobs";
+import { BlobListResponse } from "@/types/BlobsResponse";
 
-export async function GET() {
+export async function GET(): Promise<NextResponse<BlobListResponse>> {
   try {
     const store = getStore({
       name: "pdf-images",

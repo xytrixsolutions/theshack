@@ -35,7 +35,7 @@ const Navbar = () => {
           {/* Logo Section */}
           <div className="text-2xl font-extrabold text-[#DC143C] flex items-center gap-1">
             <Image
-              src="/images/home/THE_SHACK_PDF-1_new_red_page-0001-removebg-preview (1).png"
+              src="/images/home/logo.png"
               alt="Delicious food"
               width={40}
               height={40}

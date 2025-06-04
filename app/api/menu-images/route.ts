@@ -76,17 +76,29 @@ export async function GET() {
       }))
       .sort((a, b) => a.pageNumber - b.pageNumber);
 
-    return NextResponse.json({
-      success: true,
-      images: menuImages,
-      count: menuImages.length,
-      uploadedAt: mostRecentTime,
-    });
+    return NextResponse.json(
+      {
+        success: true,
+        images: menuImages,
+        count: menuImages.length,
+        uploadedAt: mostRecentTime,
+      },
+      {
+        headers: {
+          "Cache-Control": "public, max-age=300, stale-while-revalidate=600",
+        },
+      },
+    );
   } catch (error) {
     console.error("Error fetching menu images:", error);
     return NextResponse.json(
       { error: "Failed to fetch menu images" },
-      { status: 500 },
+      {
+        status: 500,
+        headers: {
+          "Cache-Control": "no-store",
+        },
+      },
     );
   }
 }
