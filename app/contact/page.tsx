@@ -1,5 +1,4 @@
-"use client";
-import { CSSProperties, JSX, Suspense, lazy, useState, useEffect } from "react";
+import { CSSProperties, JSX, Suspense, lazy } from "react";
 import { FaEnvelope, FaPhoneAlt, FaMapMarkerAlt } from "react-icons/fa";
 import contactDetails from "./data.json";
 
@@ -21,7 +20,6 @@ const ContactPage = (): JSX.Element => {
     height: "100vh",
   };
 
-  const [isMapLoaded, setIsMapLoaded] = useState(false);
   type IconMap = Record<
     "FaEnvelope" | "FaPhoneAlt" | "FaMapMarkerAlt",
     JSX.Element
@@ -31,12 +29,6 @@ const ContactPage = (): JSX.Element => {
     FaPhoneAlt: <FaPhoneAlt className="text-2xl text-[#DC143C]" />,
     FaMapMarkerAlt: <FaMapMarkerAlt className="text-2xl text-[#DC143C]" />,
   };
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsMapLoaded(true);
-    }, 2000);
-    return () => clearTimeout(timer);
-  }, []);
 
   return (
     <main style={MainStyle}>
@@ -88,7 +80,7 @@ const ContactPage = (): JSX.Element => {
                 </h3>
                 <div className="flex justify-center">
                   <Suspense fallback={<MapPlaceholder />}>
-                    {isMapLoaded ? <LazyMap /> : <MapPlaceholder />}
+                    <LazyMap />
                   </Suspense>
                 </div>
               </div>
