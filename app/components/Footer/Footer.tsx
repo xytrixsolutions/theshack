@@ -26,10 +26,10 @@ const Footer = () => {
                 Opening Hours
               </h4>
               <p className="mt-1 text-sm text-pretty">
-                Sunday - Thursday: 11:00 AM - 10:00 PM
+                Tuesday - Sunday: 11:00am - 9:00pm
               </p>
               <p className="mt-1 text-sm">
-                Friday - Saturday: 11:00 AM - 10:00 PM
+                Friday - Saturday: 11:00am - 10:00pm
               </p>
               <p className="mt-1 text-sm">Monday: Closed</p>
             </div>

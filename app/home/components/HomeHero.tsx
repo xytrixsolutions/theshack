@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { FaFacebookF, FaInstagram } from "react-icons/fa";
 import { IoMailOutline } from "react-icons/io5";
-import { SeeMenu } from "../components/SeeMenu";
+import { SeeMenu } from "../../components/SeeMenu";
 
 const images = [
   "/images/home/slidemenu1.jpg",
@@ -14,6 +14,7 @@ const images = [
   "/images/home/slidemenu5.jpg",
   "/images/home/slidemenu6.jpg",
   "/images/home/slidemenu7.jpg",
+  "/images/home/slidemenu8.jpg",
 ];
 
 const HomeHero = () => {

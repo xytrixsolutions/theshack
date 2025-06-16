@@ -1,7 +1,6 @@
 import { JSX } from "react";
 import Testimonials from "./Testimonials";
 
-// Define your static testimonial data here
 const testimonials = [
   {
     id: 1,
