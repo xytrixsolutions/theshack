@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import { SeeMenu } from "../components/SeeMenu";
+import { SeeMenu } from "../../components/SeeMenu";
 
 const HomeHero2 = () => {
   return (

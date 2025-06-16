@@ -4,12 +4,12 @@ import { PiHamburgerLight, PiCookieLight, PiWineLight } from "react-icons/pi";
 
 const HomeHero3 = () => {
   return (
-    <section className="flex flex-col md:flex-row  text-black px-10 py-16 md:px-36">
+    <section className="flex flex-col md:flex-row bg-white text-black px-10 py-16 md:px-36">
       {/* Left Section - Image Grid */}
       <div className="md:w-1/2 grid grid-cols-2 gap-4">
         {/* Large Top Image */}
         <Image
-          src="/images/home/Flux_Dev_A_mouthwatering_BBQ_chicken_smoked_to_perfection_with_0.jpg"
+          src="/images/home/sweet n stinky.jpeg"
           alt="Tacos"
           width={500}
           height={294}
@@ -17,40 +17,40 @@ const HomeHero3 = () => {
         />
         {/* Smaller Images */}
         <Image
-          src="/images/home/unsplash_dphM2U1xq0U (1).png"
+          src="/images/home/fish n chips.jpeg"
           alt="Burger"
           width={300}
           height={140}
-          className="rounded-md w-full h-[140px] object-cover"
+          className="rounded-md w-full h-[240px] object-cover"
         />
         <Image
-          src="/images/home/unsplash_CLMpC9UhyTo (2).png"
+          src="/images/home/animal style.jpeg"
           alt="Chicken Nuggets"
           width={300}
           height={140}
-          className="rounded-md w-full h-[140px] object-cover"
+          className="rounded-md w-full h-[240px] object-cover"
         />
         <Image
-          src="/images/home/unsplash_-GFCYhoRe48.png"
+          src="/images/home/wedge.jpeg"
           alt="Cheeseburger"
           width={300}
           height={140}
-          className="rounded-md w-full h-[140px] object-cover"
+          className="rounded-md w-full h-[240px] object-cover"
         />
         <Image
-          src="/images/home/Flux_Dev_A_warm_and_freshly_baked_galric_bread_sitting_on_a_ru_0.jpg"
+          src="/images/home/celery.jpeg"
           alt="Salad"
           width={300}
           height={140}
-          className="rounded-md w-full h-[140px] object-cover"
+          className="rounded-md w-full h-[240px] object-cover"
         />
         {/* Full-width Image in the Bottom Row */}
         <Image
-          src="/images/home/unsplash_tzl1UCXg5Es (1).png"
+          src="/images/home/inside.jpeg"
           alt="Bottom Image"
           width={500}
           height={140}
-          className="col-span-2 rounded-md w-full h-[140px] object-cover"
+          className="col-span-2 rounded-md w-full h-[240px] object-cover"
         />
       </div>
 

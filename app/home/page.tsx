@@ -1,17 +1,17 @@
 import { JSX } from "react";
-import HomeHero from "./HomeHero";
-import HomeHero2 from "./HomeHero2";
-import HomeHero3 from "./HomeHero3";
-import HomeHero4 from "./HomeHero4";
-// import MenuCard from "./MenuHero";
+import HomeHero from "./components/HomeHero";
+import HomeHero2 from "./components/HomeHero2";
+import HomeHero3 from "./components/HomeHero3";
+import HomeHero4 from "./components/HomeHero4";
 
-export default function Home(): JSX.Element {
+const Home = (): JSX.Element => {
   return (
-    <div>
+    <>
       <HomeHero />
       <HomeHero2 />
       <HomeHero3 />
       <HomeHero4 />
-    </div>
+    </>
   );
-}
+};
+export default Home;
