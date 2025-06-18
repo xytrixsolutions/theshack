@@ -12,7 +12,7 @@ const HomeHero2 = () => {
           The Henderson Clan
         </h2>
         <p className="mt-4 text-black">
-          The Henderson family—Glen, Janet, Ethan, Peyton, and Claire—have a
+          The Henderson family—Glen, Janee, Ethan, Peyton, and Claira—have a
           passion for great food and hospitality that’s brought people together
           across states and even across the ocean. This is their fourth
           restaurant, following two in California and one in Tennessee. Inspired
@@ -26,14 +26,6 @@ const HomeHero2 = () => {
           <li className="flex items-center">
             <span className="text-[#DC143C] mr-2">✔</span> Fresh ingredients
             sourced daily from local suppliers
-          </li>
-          <li className="flex items-center">
-            <span className="text-[#DC143C] mr-2">✔</span> Expert chefs with
-            years of culinary experience
-          </li>
-          <li className="flex items-center">
-            <span className="text-[#DC143C] mr-2">✔</span> Lightning-fast
-            service without compromising on quality
           </li>
         </ul>
         <SeeMenu />
