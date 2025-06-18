@@ -36,7 +36,7 @@ const HomeHero2 = () => {
         {/* Large Image */}
         <div className="relative w-full h-[250px] sm:col-span-2 sm:h-[400px]">
           <Image
-            src="/images/home/Flux_Schnell_Create_a_highly_realistic_image_of_a_juicy_beef_c_2.jpg"
+            src="/images/home/HomeHero2(1).jpeg"
             alt="Food Item 1"
             fill
             className="rounded-md object-cover"
@@ -46,7 +46,7 @@ const HomeHero2 = () => {
         {/* Small Images */}
         <div className="relative w-full h-[200px]">
           <Image
-            src="/images/home/Flux_Schnell_Create_a_highly_realistic_image_of_a_delicate_cry_2.jpg"
+            src="/images/home/HomeHero2(2).jpeg"
             alt="Food Item 2"
             fill
             className="rounded-md object-cover"
@@ -54,7 +54,7 @@ const HomeHero2 = () => {
         </div>
         <div className="relative w-full h-[200px]">
           <Image
-            src="/images/home/Flux_Schnell_Create_a_highly_realistic_image_of_a_mouthwaterin_2.jpg"
+            src="/images/home/HomeHero2(3).jpeg"
             alt="Food Item 3"
             fill
             className="rounded-md object-cover"
